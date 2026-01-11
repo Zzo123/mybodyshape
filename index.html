@@ -2,10 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>borareview - 쪼 블로그</title>
     <style>
-        /* Gmarket Sans Bold 폰트 적용 */
         @font-face {
             font-family: 'GmarketSansBold';
             src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
@@ -14,8 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            /* 눈이 편안한 뮤트 그린 배경색으로 변경 */
-            background-color: #95a391; 
+            background-color: #95a391; /* 눈이 편안한 세이지 그린 배경 */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,58 +25,56 @@
         .card {
             width: 100%;
             max-width: 400px;
-            /* 카드는 깨끗한 웜 화이트 계열로 변경 */
-            background-color: #fdfbf9; 
+            background-color: #fdfbf9; /* 웜 화이트 카드 배경 */
             border-radius: 40px;
-            padding: 20px 30px 40px;
+            padding: 10px 30px 40px;
             box-sizing: border-box;
             text-align: center;
-            /* 그림자를 더 부드럽게 조절 */
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
             margin: 20px;
             position: relative;
             overflow: hidden;
         }
 
-        /* 인물 사진 영역: 머리가 잘리지 않도록 상단 여백 유지 */
+        /* 인물 사진 영역 (Sophie 스타일 구현) */
         .profile-wrapper {
             position: relative;
             width: 100%;
-            margin-top: 20px;
-            z-index: 1;
+            margin-top: 10px;
+            z-index: 1; /* 텍스트보다 아래 레이어 */
         }
 
         .profile-img {
-            width: 280px; 
+            width: 260px; /* 인물이 돋보이도록 크기 조절 */
             height: auto;
             display: block;
             margin: 0 auto;
-            /* 하단부 페이드 효과 유지 */
+            /* 하단부를 부드럽게 깎아 텍스트와 자연스럽게 겹치게 함 */
             mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
 
-        /* 텍스트 영역: 인물 몸 위로 올라오도록 음수 마진 적용 */
+        /* 텍스트 영역: 사진(다리 부분) 위로 침투하는 효과 */
         .text-overlay {
             position: relative;
-            z-index: 2;
-            margin-top: -55px; /* 글자가 다리 위로 자연스럽게 겹침 */
+            z-index: 2; /* 사진보다 위 레이어로 설정하여 글자가 몸 위로 올라오게 함 */
+            margin-top: -65px; /* 음수 마진으로 글자를 다리 위로 올림 */
         }
 
-        /* borareview 아이디: 요청하신 대로 아주 작게 설정 */
+        /* borareview 아이디: 요청하신 대로 아주 작게 */
         h1 {
-            font-size: 0.75rem; 
-            color: #555;
+            font-size: 0.7rem; 
+            color: #777;
             margin: 0;
             font-weight: bold;
             letter-spacing: 0.5px;
         }
 
         .spacer {
-            height: 12px;
+            height: 15px;
         }
 
-        /* 소개 문구 및 핫딜 리스트 */
+        /* 소개 문구 스타일 */
         .intro-text {
             font-size: 0.9rem;
             color: #333;
@@ -85,14 +82,14 @@
         }
 
         .highlight {
-            color: #d63384; /* 세이지 그린과 잘 어울리는 톤다운된 핑크 */
+            color: #d63384; 
             display: inline-block;
             margin-top: 5px;
             font-size: 1.1rem;
             position: relative;
         }
 
-        /* 🫧 비눗방울 애니메이션 (느리게 디밍) */
+        /* 🫧 비눗방울 애니메이션 (4초 주기로 느리게) */
         @keyframes bubble-slow {
             0%, 100% { opacity: 0.2; transform: scale(0.9) translateY(-50%); }
             50% { opacity: 1; transform: scale(1.2) translateY(-50%); }
@@ -111,7 +108,7 @@
             animation-delay: 2s;
         }
 
-        /* 소셜 링크 영역 */
+        /* 소셜 링크 스타일 */
         .social-container {
             display: flex;
             justify-content: center;
@@ -133,12 +130,12 @@
         }
 
         .social-link:hover {
-            background-color: #95a391; /* 배경색과 통일감 */
+            background-color: #95a391;
             color: #fff;
             border-color: #95a391;
         }
 
-        /* 하단 링크 버튼: 세련된 다크 그레이/블랙 */
+        /* 하단 링크 버튼 */
         .link-item {
             display: flex;
             justify-content: center;
@@ -151,11 +148,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: bold;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .link-item:hover {
-            background-color: #111;
+            transition: transform 0.2s;
         }
 
         .link-item:active {
