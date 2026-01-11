@@ -3,64 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>뷰스타 쪼 블로그</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
+    <title>borareview - 쪼 블로그</title>
+    <style>
+        /* 전체 배경 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #c7929a; /* 이미지의 외부 배경색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        }
+
+        /* 메인 카드 컨테이너 */
+        .card {
+            width: 100%;
+            max-width: 450px;
+            background-color: #f7b2bd; /* 내부 분홍색 배경 */
+            border-radius: 40px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+
+        /* 프로필 이미지 */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-bottom: 15px;
+        }
+
+        /* 아이디 및 텍스트 */
+        h1 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* 소셜 링크 아이콘 스타일 (네이버 블로그) */
+        .social-link {
+            display: inline-block;
+            margin: 0 auto 30px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+        }
+
+        /* 네이버 아이콘 SVG 크기 설정 */
+        .naver-icon-svg {
+            width: 28px;
+            height: 28px;
+            fill: #03C75A; /* 네이버 공식 초록색 */
+        }
+
+        /* 제품 리스트 스타일 */
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid #000;
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: transform 0.2s;
+            /* 그림자 효과 - 입체감 조절 */
+            box-shadow: 0px 4px 0px #000; 
+            position: relative;
+        }
+
+        .link-item:active {
+            transform: translateY(3px);
+            box-shadow: 0px 1px 0px #000;
+        }
+
+        /* 제품 썸네일 이미지 */
+        .product-thumb {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .product-name {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* 오른쪽 점 세개 아이콘 */
+        .more-icon {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>뷰스타 쪼 블로그</h1>
-            <p class="subtitle">뷰티, 패션, 그리고 일상의 기록</p>
-        </div>
-    </header>
 
-    <nav>
-        <a href="https://blog.naver.com/borareview" target="_blank">블로그 바로가기</a>
-    </nav>
+    <div class="card">
+        <img src="profile.jpg" alt="Profile" class="profile-img">
+        <h1>borareview</h1>
+        <p>쪼 블로그 &lt;3</p>
+        
+        <a href="https://blog.naver.com/borareview" target="_blank" class="social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="naver-icon-svg">
+                <path d="M18.6 0H5.4C2.4 0 0 2.4 0 5.4v13.2C0 21.6 2.4 24 5.4 24h13.2c3 0 5.4-2.4 5.4-5.4V5.4C24 2.4 21.6 0 18.6 0zm-2.4 6v6.9l-6-6.9H7.8v12h3.6V11.1l6 6.9h2.4V6h-3.6z"/>
+            </svg>
+        </a>
 
-    <main>
-        <section class="introduction">
-            <div class="container">
-                <h2>새로운 뷰티를 만나다</h2>
-                <p>안녕하세요! 뷰티, 패션, 그리고 소중한 일상을 공유하는 뷰스타 쪼입니다. 저의 시선으로 바라본 다채로운 뷰티 트렌드와 솔직한 제품 리뷰, 그리고 삶의 작은 반짝임들을 이곳에서 만나보세요. 여러분의 하루가 더욱 특별해지기를 바랍니다.</p>
-            </div>
-        </section>
+        <a href="#" class="link-item">
+            <img src="item1.jpg" alt="product" class="product-thumb">
+            <span class="product-name">메디큐브 제로 모공패드</span>
+            <span class="more-icon">⋮</span>
+        </a>
 
-        <section class="featured-posts">
-            <div class="container">
-                <h2>추천 포스트</h2>
-                <div class="post-grid">
-                    <div class="post-card">
-                        <img src="https://via.placeholder.com/350x250/FFC0CB/333333?text=Skincare+Magic" alt="Skincare">
-                        <div class="post-content">
-                            <h3>피부 속부터 빛나는 스킨케어 루틴</h3>
-                            <p>계절의 변화에도 끄떡없는 건강한 피부를 위한 저만의 스킨케어 비법을 공개합니다.</p>
-                        </div>
-                    </div>
-                    <div class="post-card">
-                        <img src="https://via.placeholder.com/350x250/FFD700/333333?text=Fashion+Finds" alt="Fashion">
-                        <div class="post-content">
-                            <h3>이번 시즌 놓치지 말아야 할 패션 아이템</h3>
-                            <p>평범한 일상도 런웨이로 만들어 줄 시즌 베스트 패션 아이템들을 소개합니다.</p>
-                        </div>
-                    </div>
-                    <div class="post-card">
-                        <img src="https://via.placeholder.com/350x250/E6E6FA/333333?text=Daily+Vibes" alt="Daily Life">
-                        <div class="post-content">
-                            <h3>햇살 좋은 날, 나만의 힐링 타임</h3>
-                            <p>복잡한 생각은 잠시 내려놓고, 저와 함께하는 소소하지만 확실한 행복의 순간들.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        <a href="#" class="link-item">
+            <img src="item2.jpg" alt="product" class="product-thumb">
+            <span class="product-name">메디큐브 핑크 톤업 선크림 본품 + 20ml 추가</span>
+            <span class="more-icon">⋮</span>
+        </a>
 
-    <footer>
-        <p>&copy; 2024 뷰스타 쪼 블로그. All Rights Reserved.</p>
-    </footer>
+        <a href="#" class="link-item">
+            <img src="item3.jpg" alt="product" class="product-thumb">
+            <span class="product-name">토리든 다이브인 세럼 50ml + 리필 50ml 추가</span>
+            <span class="more-icon">⋮</span>
+        </a>
 
-    <script src="main.js"></script>
+        <a href="#" class="link-item">
+            <img src="item4.jpg" alt="product" class="product-thumb">
+            <span class="product-name">구달 피그애씨드 펩타이드 스킨부스터샷 에센스</span>
+            <span class="more-icon">⋮</span>
+        </a>
+
+        <a href="#" class="link-item">
+            <img src="item5.jpg" alt="product" class="product-thumb">
+            <span class="product-name">VT 리들샷 100 1+1</span>
+            <span class="more-icon">⋮</span>
+        </a>
+
+    </div>
+
 </body>
 </html>

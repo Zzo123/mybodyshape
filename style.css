@@ -1,9 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
 
 :root {
-    --font-primary: 'Playfair Display', serif;
-    --font-secondary: 'Lato', sans-serif;
+    --font-primary: 'Gaegu', cursive;
+    --font-secondary: 'Gaegu', cursive;
     --color-primary: #FFC0CB; /* Light Pink */
     --color-secondary: #FFD700; /* Gold */
     --color-text: #333333;
