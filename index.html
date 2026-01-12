@@ -191,4 +191,209 @@
     </div>
 
 </body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>borareview - 쪼 블로그</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #95a391; /* 세이지 그린 배경 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fdfbf9; /* 웜 화이트 카드 */
+            border-radius: 40px;
+            padding: 10px 30px 40px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 인물 사진 영역 (Sophie 스타일) */
+        .profile-wrapper {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 260px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* 하단부 페이드 효과 */
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        /* 텍스트 오버레이: 다리 위로 글자가 올라오도록 배치 */
+        .text-overlay {
+            position: relative;
+            z-index: 2;
+            margin-top: -65px;
+        }
+
+        /* borareview 아이디: 요청대로 굵은 스타일(700) */
+        h1 {
+            font-size: 0.75rem; 
+            color: #555;
+            margin: 0;
+            font-weight: 700; 
+            letter-spacing: 0.5px;
+        }
+
+        .spacer {
+            height: 12px;
+        }
+
+        /* 소개 문구 영역: 요청대로 굵은 스타일(700) */
+        .intro-text {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.5;
+            font-weight: 700; 
+        }
+
+        .highlight {
+            color: #d63384; 
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* 🫧 비눗방울 애니메이션 */
+        @keyframes bubble-slow {
+            0%, 100% { opacity: 0.2; transform: scale(0.9) translateY(-50%); }
+            50% { opacity: 1; transform: scale(1.2) translateY(-50%); }
+        }
+
+        .bubble {
+            position: absolute;
+            top: 50%;
+            font-size: 1.2rem;
+            animation: bubble-slow 4s infinite ease-in-out;
+        }
+
+        .bubble-left { left: -30px; }
+        .bubble-right { right: -30px; animation-delay: 2s; }
+
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #666;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        /* 하단 제품 버튼 스타일 */
+        .link-item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: #2c2c2c;
+            color: white;
+            border-radius: 50px;
+            height: 65px; 
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            padding: 0 18px;
+            box-sizing: border-box;
+        }
+
+        /* 하단 제품 설명: 요청대로 중간 굵기(500) */
+        .link-text {
+            flex: 1;
+            text-align: left;
+            line-height: 1.3;
+            font-size: 0.9rem;
+            font-weight: 500; 
+            letter-spacing: -0.2px;
+            opacity: 0.95;
+        }
+
+        .link-thumb {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            background-color: white;
+        }
+
+        .link-item:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-wrapper">
+            <img src="https://postfiles.pstatic.net/MjAyNjAxMTFfMTkg/MDAxNzY4MTM3MzY5NzA0.JkDNXmOK1ElFjoSxuaRNFb2Jqy14c9A-vXRS-IcXrSwg.JUabhWGG1a5CxXsyJXAjc5RU4CXm3nSdM0dZOrEZJ58g.PNG/1.png?type=w966" alt="Profile" class="profile-img">
+        </div>
+        
+        <div class="text-overlay">
+            <h1>borareview</h1>
+            <div class="spacer"></div>
+            
+            <div class="intro-text">
+                품절되기 전에 담으세요!<br>
+                <span class="highlight">
+                    <span class="bubble bubble-left">🫧</span>
+                    쪼 전용 핫딜 리스트 🛒
+                    <span class="bubble bubble-right">🫧</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="social-container">
+            <a href="https://blog.naver.com/borareview" target="_blank" class="social-link">
+                <span style="font-size: 13px; font-weight: 700;">N</span>
+            </a>
+            <a href="https://www.instagram.com/zzoreviewbox/" target="_blank" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
+
+        <a href="https://link.coupang.com/a/dqMaz7" target="_blank" class="link-item">
+            <img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTg3ODkwMjk4.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" alt="Product" class="link-thumb">
+            <span class="link-text">야노시호 마시는 샐러드 최저가</span>
+        </a>
+    </div>
+
+</body>
 </html>
