@@ -13,7 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #95a391; /* 세이지 그린 배경 */
+            background-color: #95a391;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +24,7 @@
         .card {
             width: 100%;
             max-width: 400px;
-            background-color: #fdfbf9; /* 웜 화이트 카드 */
+            background-color: #fdfbf9;
             border-radius: 40px;
             padding: 10px 30px 40px;
             box-sizing: border-box;
@@ -35,7 +35,6 @@
             overflow: hidden;
         }
 
-        /* 인물 사진 영역 (Sophie 스타일) */
         .profile-wrapper {
             position: relative;
             width: 100%;
@@ -52,14 +51,13 @@
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
 
-        /* 텍스트 오버레이: 다리 위로 글자가 올라오도록 배치 */
+        /* 텍스트가 사진 위로 올라오는 레이아웃 */
         .text-overlay {
             position: relative;
             z-index: 2;
             margin-top: -65px;
         }
 
-        /* borareview 아이디: 굵은 스타일(700) */
         h1 {
             font-size: 0.75rem; 
             color: #555;
@@ -72,7 +70,6 @@
             height: 12px;
         }
 
-        /* 소개 문구 영역: 굵은 스타일(700) */
         .intro-text {
             font-size: 0.95rem;
             color: #333;
@@ -80,15 +77,17 @@
             font-weight: 700; 
         }
 
+        /* 거품의 기준점이 되는 하이라이트 영역 */
         .highlight {
             color: #d63384; 
             display: inline-block;
             margin-top: 5px;
             font-size: 1.1rem;
             font-weight: 700;
+            position: relative; /* 중요: 거품 위치 기준 */
         }
 
-        /* 🫧 비눗방울 애니메이션 */
+        /* 거품 애니메이션 */
         @keyframes bubble-slow {
             0%, 100% { opacity: 0.2; transform: scale(0.9) translateY(-50%); }
             50% { opacity: 1; transform: scale(1.2) translateY(-50%); }
@@ -96,13 +95,14 @@
 
         .bubble {
             position: absolute;
-            top: 50%;
+            top: 50%; /* 문구 중앙에 배치 */
             font-size: 1.2rem;
             animation: bubble-slow 4s infinite ease-in-out;
         }
 
-        .bubble-left { left: -30px; }
-        .bubble-right { right: -30px; animation-delay: 2s; }
+        /* [수정] 거품 위치 조정 */
+        .bubble-left { left: -40px; } /* 더 바깥으로 이동 */
+        .bubble-right { right: -40px; animation-delay: 2s; } /* 더 바깥으로 이동 */
 
         .social-container {
             display: flex;
@@ -124,7 +124,6 @@
             transition: 0.2s;
         }
 
-        /* 하단 제품 버튼 스타일 */
         .link-item {
             display: flex;
             justify-content: flex-start;
@@ -140,7 +139,6 @@
             box-sizing: border-box;
         }
 
-        /* 하단 제품 설명: 중간 굵기(500) */
         .link-text {
             flex: 1;
             text-align: left;
@@ -196,7 +194,7 @@
         </div>
 
         <a href="https://link.coupang.com/a/dqMaz7" target="_blank" class="link-item">
-            <img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTM3MzY5NzA0.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" alt="Product" class="link-thumb">
+            <img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTg3ODkwMjk4.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" alt="Product" class="link-thumb">
             <span class="link-text">야노시호 마시는 샐러드 최저가</span>
         </a>
     </div>
