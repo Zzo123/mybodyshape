@@ -13,7 +13,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #95a391;
+            background-color: #95a391; /* 눈이 편안한 세이지 그린 배경 */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +24,7 @@
         .card {
             width: 100%;
             max-width: 400px;
-            background-color: #fdfbf9;
+            background-color: #fdfbf9; /* 웜 화이트 카드 배경 */
             border-radius: 40px;
             padding: 10px 30px 40px;
             box-sizing: border-box;
@@ -35,6 +35,7 @@
             overflow: hidden;
         }
 
+        /* 인물 사진 영역 (Sophie 스타일) */
         .profile-wrapper {
             position: relative;
             width: 100%;
@@ -47,17 +48,19 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            /* 하단부 페이드 효과로 다리 위 텍스트 침투 준비 */
             mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
 
-        /* 텍스트가 사진 위로 올라오는 레이아웃 */
+        /* 텍스트가 사진 위로 올라오는 입체 레이아웃 */
         .text-overlay {
             position: relative;
             z-index: 2;
-            margin-top: -65px;
+            margin-top: -65px; /* 음수 마진으로 침투 효과 */
         }
 
+        /* borareview 아이디: 굵은 스타일(700) */
         h1 {
             font-size: 0.75rem; 
             color: #555;
@@ -70,6 +73,7 @@
             height: 12px;
         }
 
+        /* 소개 문구 영역: 굵은 스타일(700) */
         .intro-text {
             font-size: 0.95rem;
             color: #333;
@@ -77,17 +81,16 @@
             font-weight: 700; 
         }
 
-        /* 거품의 기준점이 되는 하이라이트 영역 */
         .highlight {
             color: #d63384; 
             display: inline-block;
             margin-top: 5px;
             font-size: 1.1rem;
             font-weight: 700;
-            position: relative; /* 중요: 거품 위치 기준 */
+            position: relative;
         }
 
-        /* 거품 애니메이션 */
+        /* 🫧 비눗방울 애니메이션 (4초 주기로 느리게 깜빡임) */
         @keyframes bubble-slow {
             0%, 100% { opacity: 0.2; transform: scale(0.9) translateY(-50%); }
             50% { opacity: 1; transform: scale(1.2) translateY(-50%); }
@@ -95,14 +98,13 @@
 
         .bubble {
             position: absolute;
-            top: 50%; /* 문구 중앙에 배치 */
+            top: 50%;
             font-size: 1.2rem;
             animation: bubble-slow 4s infinite ease-in-out;
         }
 
-        /* [수정] 거품 위치 조정 */
-        .bubble-left { left: -40px; } /* 더 바깥으로 이동 */
-        .bubble-right { right: -40px; animation-delay: 2s; } /* 더 바깥으로 이동 */
+        .bubble-left { left: -40px; } 
+        .bubble-right { right: -40px; animation-delay: 2s; }
 
         .social-container {
             display: flex;
@@ -124,6 +126,13 @@
             transition: 0.2s;
         }
 
+        .social-link:hover {
+            background-color: #95a391;
+            color: #fff;
+            border-color: #95a391;
+        }
+
+        /* 하단 링크 버튼 공통 스타일 */
         .link-item {
             display: flex;
             justify-content: flex-start;
@@ -139,11 +148,12 @@
             box-sizing: border-box;
         }
 
+        /* 제품 설명 텍스트: 중간 굵기(500) 적용 */
         .link-text {
             flex: 1;
             text-align: left;
             line-height: 1.3;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500; 
             letter-spacing: -0.2px;
             opacity: 0.95;
@@ -196,6 +206,16 @@
         <a href="https://oy.run/4qG1a95" target="_blank" class="link-item">
             <img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTg3ODkwMjk4.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" alt="Product" class="link-thumb">
             <span class="link-text">야노시호 마시는 샐러드 최저가</span>
+        </a>
+
+        <a href="https://link.coupang.com/a/dqIJZb" target="_blank" class="link-item">
+            <img src="https://sitem.ssgcdn.com/01/83/31/item/1000433318301_i1_1200.jpg" alt="Product" class="link-thumb">
+            <span class="link-text">효과본 김남주 맥주효모</span>
+        </a>
+
+        <a href="https://kr.iherb.com/pr/now-foods-brewer-s-yeast-650-mg-200-tablets/48771?rcode=FEG9985" target="_blank" class="link-item">
+            <img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now02410/v/68.jpg" alt="Product" class="link-thumb">
+            <span class="link-text">"가성비" 아이허브 맥주효모 1만원 대</span>
         </a>
     </div>
 
