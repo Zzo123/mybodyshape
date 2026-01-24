@@ -62,6 +62,13 @@
         .counter-box { background: rgba(0,0,0,0.15); padding: 8px 20px; border-radius: 20px; display: inline-flex; gap: 15px; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.2); }
         .footer-text { font-size: 0.65rem; opacity: 0.7; margin-top: 15px; line-height: 1.5; padding: 0 20px; }
     </style>
+    <script>
+        if (!location.search.includes('v=1')) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('v', '1');
+            window.history.replaceState(null, '', url);
+        }
+    </script>
 </head>
 <body onload="initCounter()">
 
