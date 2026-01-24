@@ -6,154 +6,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>뷰스타 쪼 - borareview</title>
-    <meta name="description" content="(당신을 위한 최저가 큐레이션)">
     <meta property="og:title" content="뷰스타 쪼 - borareview">
     <meta property="og:description" content="(당신을 위한 최저가 큐레이션)">
-    <meta property="og:image" content="https://postfiles.pstatic.net/MjAyNjAxMjVfNzAg/MDAxNzY5MjY5MDg4MDY2.VBM1QAwp9KKEt0y1PjbJ0wMOFSIVHeiQHUlS8I0Ds6Ag.TAU0SGw-nb3FsChQIif-nAj67EcZKhXs5aL1Xi2ey3Yg.JPEG/Gemini_Generated_Image_xemzatxemzatxemz.jpg?type=w966&v=fixed2026">
-    <meta property="og:url" content="https://zzo-building3.pages.dev/?update=final">
+    <meta property="og:image" content="https://postfiles.pstatic.net/MjAyNjAxMjVfNzAg/MDAxNzY5MjY5MDg4MDY2.VBM1QAwp9KKEt0y1PjbJ0wMOFSIVHeiQHUlS8I0Ds6Ag.TAU0SGw-nb3FsChQIif-nAj67EcZKhXs5aL1Xi2ey3Yg.JPEG/Gemini_Generated_Image_xemzatxemzatxemz.jpg?type=w966&v=20260125_final">
+    <meta property="og:url" content="https://zzo-building3.pages.dev/?v=fixed">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://postfiles.pstatic.net/MjAyNjAxMjVfNzAg/MDAxNzY5MjY5MDg4MDY2.VBM1QAwp9KKEt0y1PjbJ0wMOFSIVHeiQHUlS8I0Ds6Ag.TAU0SGw-nb3FsChQIif-nAj67EcZKhXs5aL1Xi2ey3Yg.JPEG/Gemini_Generated_Image_xemzatxemzatxemz.jpg?type=w966&v=fixed2026">
-    <link rel="image_src" href="https://postfiles.pstatic.net/MjAyNjAxMjVfNzAg/MDAxNzY5MjY5MDg4MDY2.VBM1QAwp9KKEt0y1PjbJ0wMOFSIVHeiQHUlS8I0Ds6Ag.TAU0SGw-nb3FsChQIif-nAj67EcZKhXs5aL1Xi2ey3Yg.JPEG/Gemini_Generated_Image_xemzatxemzatxemz.jpg?type=w966&v=fixed2026">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        :root { --bg-color: #95a391; --card-bg: #fdfbf9; --point-pink: #d63384; --accent-blue: #4d6ef5; --gold-bg: #fff9e6; --nice-green: #2e7d32; --main-gap: 22px; }
+        :root { --bg-color: #95a391; --card-bg: #fdfbf9; --point-pink: #d63384; --gold-bg: #fff9e6; --nice-green: #2e7d32; }
         body { margin: 0; padding: 0; background-color: var(--bg-color); font-family: 'Noto Sans KR', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        .top-container { text-align: center; padding-top: 15px; width: 100%; }
-        header { display: flex; flex-direction: column; align-items: center; color: white; }
-        .header-main { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 2px; }
-        .profile-wrapper { width: 55px; height: 55px; overflow: hidden; border: none; }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
-        header h1 { font-size: 1.65rem; margin: 0; font-weight: 700; letter-spacing: -1px; }
-        header p.subtitle { font-size: 0.8rem; margin: 3px 0; font-weight: 500; opacity: 0.95; }
-        .social-links { display: flex; justify-content: center; gap: 8px; margin-top: 5px; }
-        .social-links a { width: 25px; height: 25px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); }
-        .social-links a svg { width: 12px; height: 12px; }
-        .main-container { display: flex; flex-direction: column; width: 92%; max-width: 480px; gap: var(--main-gap); padding: 10px 0 20px; align-items: center; }
-        .section-card { background-color: var(--card-bg); border-radius: 30px; padding: 14px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); box-sizing: border-box; width: 100%; overflow: hidden; }
-        .section-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; color: #333; text-align: center; }
-        .calc-group { margin-bottom: 8px; }
-        .calc-label { display: block; font-size: 0.8rem; color: #666; margin-bottom: 3px; font-weight: 500; }
-        .calc-input, .calc-select { width: 100%; padding: 8px 12px; border: 1px solid #eee; border-radius: 10px; font-size: 0.95rem; outline: none; box-sizing: border-box; background-color: white; font-family: inherit; }
-        .res-box { flex: 1; background: #f0f3ff; border-radius: 15px; padding: 12px; text-align: center; margin-top: 5px; box-sizing: border-box; }
-        .res-box .val { font-size: 1.4rem; font-weight: 700; color: #333; }
-        .res-box .label { font-size: 0.75rem; color: #888; margin-top: 3px; font-weight: 500; }
+        
+        .top-container { text-align: center; padding: 25px 0 10px; width: 100%; color: white; }
+        .profile-wrapper { width: 60px; height: 60px; overflow: hidden; border-radius: 8px; margin-bottom: 8px; display: inline-block; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; }
+        h1 { font-size: 1.6rem; margin: 0; font-weight: 700; }
+        .subtitle { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; }
+
+        .main-container { width: 92%; max-width: 450px; display: flex; flex-direction: column; gap: 20px; padding: 10px 0 40px; }
+        
+        .section-card { background: var(--card-bg); border-radius: 28px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); width: 100%; box-sizing: border-box; }
+        .section-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 15px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+        /* 입력 폼 스타일 */
+        .input-group { display: flex; gap: 8px; margin-bottom: 10px; }
+        select, input { flex: 1; padding: 10px; border-radius: 12px; border: 1px solid #eee; font-family: inherit; font-size: 0.9rem; outline: none; background: white; }
+        
+        .res-container { display: flex; gap: 10px; margin-top: 10px; }
+        .res-box { flex: 1; background: #f1f3f9; border-radius: 15px; padding: 12px; text-align: center; }
         .res-box.active { background: #fff0f6; }
+        .res-box .val { font-size: 1.3rem; font-weight: 700; color: #333; display: block; }
         .res-box.active .val { color: var(--point-pink); }
-        .avg-result-box { background: #eefaf3; border-radius: 10px; padding: 10px; text-align: center; margin-bottom: 10px; }
-        .deal-group { width: 100%; display: flex; flex-direction: column; gap: 10px; }
-        .link-item { display: flex; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 20px; padding: 10px; text-decoration: none; width: 100%; box-sizing: border-box; }
-        .link-thumb { width: 45px; height: 45px; border-radius: 8px; object-fit: cover; margin-right: 12px; flex-shrink: 0; }
-        .link-text { font-size: 1.05rem; font-weight: 500; color: #2c2c2c; line-height: 1.3; flex-grow: 1; letter-spacing: -0.5px; }
-        .effect-img { width: 50px; height: 35px; border-radius: 5px; object-fit: cover; margin-left: 10px; flex-shrink: 0; border: 1px solid #f0f0f0; }
-        .horo-card { background-color: var(--gold-bg); border-radius: 30px; padding: 14px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ffeeba; width: 100%; box-sizing: border-box; overflow: hidden; }
-        .horo-content { font-size: 0.82rem; color: #444; line-height: 1.7; margin-top: 10px; text-align: left; padding: 15px; background: white; border-radius: 22px; display: none; border: 1px dashed #ffeeba; }
-        .lucky-item-card { margin-top: 12px; padding: 10px; background: #fff0f6; border-radius: 18px; display: flex; align-items: center; text-decoration: none; border: 1px solid #ffdeeb; }
-        .lucky-item-card img { width: 50px; height: 50px; border-radius: 12px; margin-right: 12px; object-fit: cover; }
-        .visitor-counter { margin: 15px 0 5px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.9); background: rgba(0, 0, 0, 0.15); padding: 8px 18px; border-radius: 20px; display: flex; gap: 15px; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .visitor-counter b { color: #fff; font-weight: 700; }
-        footer { width: 100%; text-align: center; padding-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
-        .footer-text { font-size: 0.65rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6; padding: 0 | 20px; margin-top: 10px; }
-        @media (max-width: 480px) { .section-card, .horo-card { padding: 12px 18px; } }
+        .res-box .label { font-size: 0.75rem; color: #888; margin-top: 4px; }
+        .avg-msg { font-size: 0.82rem; text-align: center; margin-top: 8px; color: var(--nice-green); font-weight: 500; }
+
+        /* 핫딜 링크 스타일 */
+        .deal-group { display: flex; flex-direction: column; gap: 10px; }
+        .link-item { display: flex; align-items: center; background: white; border-radius: 20px; padding: 12px; text-decoration: none; color: inherit; border: 1px solid #efefef; }
+        .link-thumb { width: 50px; height: 50px; border-radius: 10px; object-fit: cover; margin-right: 15px; flex-shrink: 0; }
+        .link-text { font-size: 1rem; font-weight: 500; flex-grow: 1; line-height: 1.3; }
+        .effect-img { width: 45px; height: 35px; border-radius: 6px; object-fit: cover; margin-left: 10px; border: 1px solid #f0f0f0; }
+
+        /* 운세 & 12종 풍수템 스타일 */
+        .horo-card { background: var(--gold-bg); border-radius: 28px; padding: 20px; width: 100%; box-sizing: border-box; }
+        .horo-content { background: white; border-radius: 18px; padding: 15px; font-size: 0.85rem; line-height: 1.7; color: #444; display: none; margin-top: 15px; border: 1px dashed #ffeeba; }
+        .lucky-item-card { margin-top: 12px; padding: 12px; background: #fff0f6; border-radius: 18px; display: flex; align-items: center; text-decoration: none; border: 1px solid #ffdeeb; }
+        .lucky-item-card img { width: 55px; height: 55px; border-radius: 12px; margin-right: 12px; object-fit: cover; }
+        .lucky-info { flex-grow: 1; }
+        .go-btn { width: 30px; height: 30px; background: var(--point-pink); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-left: 8px; flex-shrink: 0; }
+
+        footer { text-align: center; padding-bottom: 30px; color: white; }
+        .counter-box { background: rgba(0,0,0,0.15); padding: 8px 20px; border-radius: 20px; display: inline-flex; gap: 15px; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.2); }
+        .footer-text { font-size: 0.65rem; opacity: 0.7; margin-top: 15px; line-height: 1.5; padding: 0 20px; }
     </style>
-    <script>
-        // URL에 v=1 파라미터 강제 표시
-        if (!location.search.includes('v=1')) {
-            const url = new URL(window.location.href);
-            url.searchParams.set('v', '1');
-            window.history.replaceState(null, '', url);
-        }
-    </script>
 </head>
 <body onload="initCounter()">
-    <div style="display:none; visibility:hidden;">
-        <img src="https://postfiles.pstatic.net/MjAyNjAxMjVfNzAg/MDAxNzY5MjY5MDg4MDY2.VBM1QAwp9KKEt0y1PjbJ0wMOFSIVHeiQHUlS8I0Ds6Ag.TAU0SGw-nb3FsChQIif-nAj67EcZKhXs5aL1Xi2ey3Yg.JPEG/Gemini_Generated_Image_xemzatxemzatxemz.jpg?type=w966" alt="최저가 모음">
-    </div>
 
     <div class="top-container">
-        <header>
-            <div class="header-main">
-                <div class="profile-wrapper">
-                    <img src="https://postfiles.pstatic.net/MjAyNjAxMjRfMTE0/MDAxNzY5MjQ0NDAxODMx.QE_iJJ5LDRSIDG_IHVTjscO4snVOnI3KQkwPNBPYwRsg.6exmzGFkzSll2M493cCnyUrrVCmn143_q9UC4PFxAqcg.JPEG/IMG_9797.jpg?type=w966" alt="뷰스타 쪼" class="profile-img">
-                </div>
-                <h1>뷰스타 쪼</h1>
-            </div>
-            <p class="subtitle">(당신을 위한 최저가 큐레이션)</p>
-            <div class="social-links">
-                <a href="https://blog.naver.com/borareview" target="_blank">N</a>
-                <a href="https://www.instagram.com/zzoreviewbox/" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-            </div>
-        </header>
+        <div class="profile-wrapper">
+            <img src="https://postfiles.pstatic.net/MjAyNjAxMjRfMTE0/MDAxNzY5MjQ0NDAxODMx.QE_iJJ5LDRSIDG_IHVTjscO4snVOnI3KQkwPNBPYwRsg.6exmzGFkzSll2M493cCnyUrrVCmn143_q9UC4PFxAqcg.JPEG/IMG_9797.jpg?type=w966" class="profile-img">
+        </div>
+        <h1>뷰스타 쪼</h1>
+        <p class="subtitle">(당신을 위한 최저가 큐레이션)</p>
     </div>
 
     <div class="main-container">
         <div class="section-card">
-            <div class="section-title">📈 평균 키 & 미용 몸무게 통합 분석</div>
-            <div style="display: flex; gap: 8px; margin-bottom: 8px;"><div class="calc-group" style="flex: 1;"><label class="calc-label">성별</label><select id="analGender" class="calc-select" onchange="calcAnalysis()"><option value="female" selected>여성</option><option value="male">남성</option></select></div><div class="calc-group" style="flex: 1;"><label class="calc-label">나이대</label><select id="analAge" class="calc-select" onchange="calcAnalysis()"><option value="20">20대</option><option value="30">30대</option><option value="40">40대</option><option value="50">50대+</option></select></div></div>
-            <div class="calc-group"><label class="calc-label">당신의 키(cm)</label><input type="number" id="analH" class="calc-input" placeholder="예: 163" oninput="calcAnalysis()"></div>
-            <div class="avg-result-box"><div id="analAvgResult" style="color:var(--nice-green); font-size:0.85rem; font-weight:500; text-align:center;">수치를 입력하세요.</div></div>
-            <div style="display: flex; gap: 8px;"><div class="res-box" style="background:#f8f9fa;"><div class="val" id="stdW">-</div><div class="label">표준 체중</div></div><div class="res-box active"><div class="val" id="beautyW">-</div><div class="label">미용 체중</div></div></div>
+            <div class="section-title">📈 평균 키 & 미용 몸무게 분석</div>
+            <div class="input-group">
+                <select id="analGender" onchange="calcAnalysis()"><option value="female">여성</option><option value="male">남성</option></select>
+                <select id="analAge" onchange="calcAnalysis()"><option value="20">20대</option><option value="30">30대</option><option value="40">40대</option><option value="50">50대+</option></select>
+            </div>
+            <input type="number" id="analH" placeholder="키(cm) 입력 (예: 163)" oninput="calcAnalysis()">
+            <div id="analMsg" class="avg-msg">키를 입력해 주세요.</div>
+            <div class="res-container">
+                <div class="res-box"><span class="val" id="stdW">-</span><span class="label">표준 체중</span></div>
+                <div class="res-box active"><span class="val" id="beautyW">-</span><span class="label">미용 체중</span></div>
+            </div>
         </div>
 
         <div class="deal-group">
-            <a href="https://link.coupang.com/a/dyHzTw" target="_blank" class="link-item"><img src="https://m.blick.kr/web/product/extra/big/202411/db8e8a474be44f7e8c56419b7be6326f.png" class="link-thumb" loading="lazy"><span class="link-text">대기업 보다 좋아서 쓰는 빔프로젝터</span><img src="https://postfiles.pstatic.net/MjAyNTA0MThfMTQg/MDAxNzQ0OTgxMDg0MDQ1.8lZw6vQg_UqZxQSjSqjI_50KhLbZzphSgu5FqZNmtCQg.yakdX1BU2kRR5xOVNhKx9vFx4LR-mNzv6kfvSQsc6cQg.JPEG/%EB%B9%94%ED%94%84%EB%A1%9C%EC%A0%9D%ED%84%B0.jpg?type=w966" class="effect-img" loading="lazy"></a>
-            <a href="https://link.coupang.com/a/dyLnqT" target="_blank" class="link-item"><img src="https://cafe24img.poxo.com/manfidence/web/product/big/202409/06713d5e39ff4671b9e216177fccba20.jpg" class="link-thumb" loading="lazy"><span class="link-text">서현의 몸매 비결? 빨간통 다이어트</span></a>
+            <a href="https://link.coupang.com/a/dyHzTw" target="_blank" class="link-item"><img src="https://m.blick.kr/web/product/extra/big/202411/db8e8a474be44f7e8c56419b7be6326f.png" class="link-thumb"><span class="link-text">대기업 보다 좋아서 쓰는 빔프로젝터</span><img src="https://postfiles.pstatic.net/MjAyNTA0MThfMTQg/MDAxNzQ0OTgxMDg0MDQ1.8lZw6vQg_UqZxQSjSqjI_50KhLbZzphSgu5FqZNmtCQg.yakdX1BU2kRR5xOVNhKx9vFx4LR-mNzv6kfvSQsc6cQg.JPEG/%EB%B9%94%ED%94%84%EB%A1%9C%EC%A0%9D%ED%84%B0.jpg?type=w966" class="effect-img"></a>
+            <a href="https://link.coupang.com/a/dyLnqT" target="_blank" class="link-item"><img src="https://cafe24img.poxo.com/manfidence/web/product/big/202409/06713d5e39ff4671b9e216177fccba20.jpg" class="link-thumb"><span class="link-text">서현의 몸매 비결? 빨간통 다이어트</span></a>
         </div>
 
-        <div class="section-card"><div class="section-title">📊 BMI 지수 계산기</div><div style="display: flex; gap: 8px;"><div class="calc-group" style="flex: 1;"><label class="calc-label">키(cm)</label><input type="number" id="bmiH" class="calc-input" placeholder="163" oninput="calcBMI()"></div><div class="calc-group" style="flex: 1;"><label class="calc-label">몸무게(kg)</label><input type="number" id="bmiW" class="calc-input" placeholder="50" oninput="calcBMI()"></div></div><div class="res-box"><div class="val" id="bmiRes">0.0</div><div class="label" id="bmiStatus">대기 중</div></div></div>
-        <div class="deal-group"><a href="https://link.coupang.com/a/dqIJZb" target="_blank" class="link-item"><img src="https://sitem.ssgcdn.com/01/83/31/item/1000433318301_i1_1200.jpg" class="link-thumb"><span class="link-text">효과 본 김남주 맥주 효모 핫딜</span><img src="https://postfiles.pstatic.net/MjAyNjAxMTNfNTIg/MDAxNzY4Mjk1NDI0NjAw.xR3WsmIqgkThSc0iAkxkA96EEVkDnA8avuOployLkzgg.E0-tmA4SPbTx_e6fkayYipe2myfRTDEdpiyLIP-FIR4g.JPEG/1.jpg?type=w966" class="effect-img"></a></div>
-        <div class="horo-card"><div class="section-title" style="color:#856404;">🔮 별자리 운세 & 행운 아이템</div><div class="calc-group"><select id="zodiacSelect" class="calc-select" onchange="showHoroscope()"><option value="">별자리를 선택하세요</option><option value="1">물병자리 (1.20~2.18)</option><option value="2">물고기자리 (2.19~3.20)</option><option value="3">양자리 (3.21~4.19)</option><option value="4">황소자리 (4.20~5.20)</option><option value="5">쌍둥이자리 (5.21~6.21)</option><option value="6">게자리 (6.22~7.22)</option><option value="7">사자자리 (7.23~8.22)</option><option value="8">처녀자리 (8.23~9.23)</option><option value="9">천칭자리 (9.24~10.22)</option><option value="10">전갈자리 (10.23~11.22)</option><option value="11">사수자리 (11.23~12.24)</option><option value="12">염소자리 (12.25~1.19)</option></select></div><div id="horoContent" class="horo-content"></div><div id="luckyItemArea"></div></div>
-        <div class="deal-group"><a href="https://oy.run/4qG1a95" target="_blank" class="link-item"><img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTg3ODkwMjk4.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" class="link-thumb"><span class="link-text">야노시호 마시는 샐러드 최저가</span></a></div>
+        <div class="section-card">
+            <div class="section-title">📊 BMI 지수 계산기</div>
+            <div class="input-group">
+                <input type="number" id="bmiH" placeholder="키(cm)" oninput="calcBMI()">
+                <input type="number" id="bmiW" placeholder="몸무게(kg)" oninput="calcBMI()">
+            </div>
+            <div class="res-box" style="margin-top:0;"><span class="val" id="bmiRes">0.0</span><span class="label" id="bmiStatus">수치를 입력하세요.</span></div>
+        </div>
+
+        <div class="deal-group">
+            <a href="https://link.coupang.com/a/dqIJZb" target="_blank" class="link-item"><img src="https://sitem.ssgcdn.com/01/83/31/item/1000433318301_i1_1200.jpg" class="link-thumb"><span class="link-text">효과 본 김남주 맥주 효모 핫딜</span><img src="https://postfiles.pstatic.net/MjAyNjAxMTNfNTIg/MDAxNzY4Mjk1NDI0NjAw.xR3WsmIqgkThSc0iAkxkA96EEVkDnA8avuOployLkzgg.E0-tmA4SPbTx_e6fkayYipe2myfRTDEdpiyLIP-FIR4g.JPEG/1.jpg?type=w966" class="effect-img"></a>
+            <a href="https://kr.iherb.com/pr/now-foods-brewer-s-yeast-650-mg-200-tablets/48771?rcode=FEG9985" target="_blank" class="link-item"><img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now02410/v/68.jpg" class="link-thumb"><span class="link-text">"가성비" 아이허브 맥주효모 1만원 대</span></a>
+        </div>
+
+        <div class="horo-card">
+            <div class="section-title" style="color:#856404;">🔮 별자리 운세 & 행운 아이템</div>
+            <select id="zodiac" onchange="showHoro()" style="width:100%;"><option value="">별자리를 선택하세요</option><option value="1">물병자리 (1.20~2.18)</option><option value="2">물고기자리 (2.19~3.20)</option><option value="3">양자리 (3.21~4.19)</option><option value="4">황소자리 (4.20~5.20)</option><option value="5">쌍둥이자리 (5.21~6.21)</option><option value="6">게자리 (6.22~7.22)</option><option value="7">사자자리 (7.23~8.22)</option><option value="8">처녀자리 (8.23~9.23)</option><option value="9">천칭자리 (9.24~10.22)</option><option value="10">전갈자리 (10.23~11.22)</option><option value="11">사수자리 (11.23~12.24)</option><option value="12">염소자리 (12.25~1.19)</option></select>
+            <div id="horoTxt" class="horo-content"></div>
+            <div id="luckyArea"></div>
+        </div>
+
+        <div class="deal-group">
+            <a href="https://link.coupang.com/a/dyGXsN" target="_blank" class="link-item"><img src="https://cdn.imweb.me/thumbnail/20251212/cb85cec76f249.jpg" class="link-thumb"><span class="link-text">집에서 하는 천국의 계단? 칼로리 순삭!</span></a>
+            <a href="https://naver.me/5cqnj2Vn" target="_blank" class="link-item"><img src="https://sitem.ssgcdn.com/11/80/03/item/1000588038011_i1_750.jpg" class="link-thumb"><span class="link-text">평점 4.8 리얼 후기 가성비 러닝머신</span></a>
+            <a href="https://oy.run/4qG1a95" target="_blank" class="link-item"><img src="https://postfiles.pstatic.net/MjAyNjAxMTJfNDIg/MDAxNzY4MTg3ODkwMjk4.5UAsq8Ytcukl1x-VqXJpZevIlqGlmPI5c8oD9M7eEi4g.zLDZALH89ApqENzxEeXkuAEdIgr3rbS40dzqGlveq_og.PNG/6.png?type=w966" class="link-thumb"><span class="link-text">야노시호 마시는 샐러드 최저가</span></a>
+        </div>
     </div>
 
     <footer>
-        <div class="visitor-counter"><span>Today: <b id="today-count">...</b></span><span>Total: <b id="total-count">...</b></span></div>
-        <p class="footer-text">*위 링크로 구매시 크리에이터에게 소정의 수수료가 지급될 수 있으나 상품가격에 변동은 없습니다.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+        <div class="counter-box">Today: <b id="today">...</b> &nbsp; | &nbsp; Total: <b id="total">...</b></div>
+        <p class="footer-text">*이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
     </footer>
 
     <script>
         async function initCounter() {
-            const namespace = "borareview_v3_bulletproof"; 
-            const kstDate = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).replace(/\. /g, '').replace(/\./g, '');
-            const todayKey = `today_${kstDate}`;
+            const ns = "borareview_v_final_base"; 
+            const kst = new Intl.DateTimeFormat('ko-KR', {timeZone:'Asia/Seoul', year:'numeric', month:'2-digit', day:'2-digit'}).format(new Date()).replace(/\. /g, '').replace(/\./g, '');
             try {
-                const totalRes = await fetch(`https://api.counterapi.dev/v1/${namespace}/total/up`);
-                const totalData = await totalRes.json();
-                document.getElementById('total-count').innerText = totalData.count.toLocaleString();
-                const todayRes = await fetch(`https://api.counterapi.dev/v1/${namespace}/${todayKey}/up`);
-                const todayData = await todayRes.json();
-                document.getElementById('today-count').innerText = todayData.count.toLocaleString();
-            } catch (e) { document.getElementById('today-count').innerText = "1"; document.getElementById('total-count').innerText = "1,000+"; }
+                const tRes = await fetch(`https://api.counterapi.dev/v1/${ns}/total/up`);
+                const tData = await tRes.json(); document.getElementById('total').innerText = tData.count.toLocaleString();
+                const dRes = await fetch(`https://api.counterapi.dev/v1/${ns}/today_${kst}/up`);
+                const dData = await dRes.json(); document.getElementById('today').innerText = dData.count.toLocaleString();
+            } catch(e) { document.getElementById('today').innerText = "1"; document.getElementById('total').innerText = "1,000+"; }
         }
+
         function calcAnalysis() {
-            const h = parseFloat(document.getElementById('analH').value);
-            if (h > 0) {
-                document.getElementById('stdW').innerText = (Math.pow(h/100, 2) * 22).toFixed(1) + "kg";
-                document.getElementById('beautyW').innerText = (Math.pow(h/100, 2) * 19).toFixed(1) + "kg";
+            const data = { female: {20:161.3, 30:161.9, 40:160.2, 50:157.6}, male: {20:174.4, 30:174.9, 40:173.2, 50:170.5} };
+            const g = document.getElementById('analGender').value, a = document.getElementById('analAge').value, h = parseFloat(document.getElementById('analH').value);
+            if(h > 0) {
+                const avg = data[g][a], diff = (h - avg).toFixed(1);
+                document.getElementById('analMsg').innerHTML = `평균 키: <b>${avg}cm</b> (${diff>=0 ? diff+'cm 큼' : Math.abs(diff)+'cm 작음'})`;
+                document.getElementById('stdW').innerText = (Math.pow(h/100,2)*22).toFixed(1)+"kg";
+                document.getElementById('beautyW').innerText = (Math.pow(h/100,2)*19).toFixed(1)+"kg";
             }
         }
+
         function calcBMI() {
-            const h = document.getElementById('bmiH').value / 100, w = document.getElementById('bmiW').value;
-            if (h > 0 && w > 0) { document.getElementById('bmiRes').innerText = (w / (h * h)).toFixed(1); }
+            const h = document.getElementById('bmiH').value/100, w = document.getElementById('bmiW').value;
+            if(h>0 && w>0) {
+                const bmi = (w/(h*h)).toFixed(1); document.getElementById('bmiRes').innerText = bmi;
+                document.getElementById('bmiStatus').innerText = bmi < 18.5 ? "저체중" : bmi < 23 ? "정상" : "과체중 이상";
+            }
         }
-        const fengShuiItems = [ { name: "싱잉볼", reason: "현관에서 기운을 정화시켜보세요.", url: "https://link.coupang.com/a/dyKsFd", img: "https://t4c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/cef7/0bc01026da60025c185c3140e2c75143dfa47f067f2d004af9588d69848d.jpg" }, { name: "장스탠드", reason: "공간의 구석을 비춰 성공운을 깨우세요.", url: "https://ozip.me/PkR1BgA?af", img: "https://prs.ohou.se/apne2/any/uploads/productions/v1-410686675410944.jpg?w=1280&h=1280&c=c" } ];
-        const experts = [ "🔱 <b>오늘의 천체 흐름</b><br>내실을 기하는 것이 유리합니다.", "🔥 <b>오늘의 천체 흐름</b><br>새로운 결정을 내리기에 적합합니다." ];
-        function showHoroscope() {
-            const sign = document.getElementById('zodiacSelect').value, itemArea = document.getElementById('luckyItemArea'), content = document.getElementById('horoContent');
-            if(sign) {
-                content.style.display = 'block';
-                const now = new Date(), dateSeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-                const combinedIndex = dateSeed + parseInt(sign);
-                content.innerHTML = experts[combinedIndex % experts.length];
-                const item = fengShuiItems[combinedIndex % fengShuiItems.length];
-                itemArea.innerHTML = `<a href="${item.url}" target="_blank" class="lucky-item-card"><img src="${item.img}"><div class="lucky-item-info"><span class="lucky-item-reason">🏠 ${item.reason}</span><span class="lucky-item-name">✨ 행운템: ${item.name}</span></div></a>`;
-            } else { content.style.display = 'none'; itemArea.innerHTML = ''; }
+
+        const fengShui = [
+            {n:"싱잉볼", r:"맑은 소리로 집안의 탁한 기운을 정화하고 마음의 안정을 찾으세요.", u:"https://link.coupang.com/a/dyKsFd", i:"https://t4c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/cef7/0bc01026da60025c185c3140e2c75143dfa47f067f2d004af9588d69848d.jpg"},
+            {n:"액막이 북어", r:"나쁜 기운을 막고 복이 들어오는 통로를 지키는 비결입니다.", u:"https://link.coupang.com/a/dyKusA", i:"https://t5a.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/396e/25b4bf5ff64f9001915d9ddc11d88d1b19bfd0cfaf022c3d6994d198d22d.jpg"},
+            {n:"장스탠드", r:"구석진 공간에 밝은 빛을 채워 성공의 기운을 깨워보세요.", u:"https://ozip.me/PkR1BgA?af", i:"https://prs.ohou.se/apne2/any/uploads/productions/v1-410686675410944.jpg?w=1280&h=1280&c=c"},
+            {n:"카페트", r:"바닥의 온기를 유지하여 재물운을 안정적으로 가두세요.", u:"https://ozip.me/hxmqIiX?af", i:"https://image.ohousecdn.com/i/bucketplace-v2-development/uploads/productions/169838760927234776.jpg?w=1280&h=1280&c=c"},
+            {n:"무드등", r:"따뜻한 색감의 빛으로 집안에 안정의 기운을 높이세요.", u:"https://link.coupang.com/a/dyKxh1", i:"https://thumbnail6.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2025/08/28/12/6/6bca4f1b-9de9-4990-8c62-3f50a0833a49.png"},
+            {n:"거실 TV", r:"즐거운 파동을 거실에 채워 가족의 기운을 순환시키세요.", u:"https://link.coupang.com/a/dyKzhL", i:"https://thumbnail6.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2025/10/15/15/2/2816e610-eebc-479c-b994-70880671f140.jpg"},
+            {n:"패브릭 소파", r:"부드러운 재질로 휴식의 질을 높여 내면을 정돈하세요.", u:"https://ozip.me/r40SOYF?af", i:"https://image.ohousecdn.com/i/bucketplace-v2-development/uploads/openapi/4167132/1721871518212.jpg?w=1280&h=1280&c=c"},
+            {n:"관엽 식물", r:"싱그러운 생명 에너지를 배치하여 정체된 운기를 깨우세요.", u:"https://link.coupang.com/a/dyKCdg", i:"https://thumbnail10.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/180584597005505-fb4ce459-a8ae-462d-8bda-b4e16cb26501.jpg"},
+            {n:"인테리어 시계", r:"질서 있는 흐름을 통해 큰 행운이 들어오는 길을 여세요.", u:"https://link.coupang.com/a/dyKEhn", i:"https://t3a.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/d9ee/3273e539fae3caef8f9226d37e77f8849891af26b1eb5f434d636de6c851.png"},
+            {n:"실링팬", r:"원활한 공기 흐름을 만들어 재물과 복의 순환을 돕습니다.", u:"https://link.coupang.com/a/dyKFkf", i:"https://thumbnail1.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2025/12/08/14/9/0a67a9dc-ecaf-4a9a-971d-51296bc5040c.jpg"},
+            {n:"우드 수납장", r:"정리 정돈을 통해 흐트러진 운기를 바로잡아보세요.", u:"https://ozip.me/4ARjVhI?af", i:"https://prs.ohou.se/apne2/any/uploads/productions/v1-393417029013504.jpg?w=1280&h=1280&c=c"},
+            {n:"홈사우나", r:"따뜻한 기운으로 정체된 기를 시원하게 소통시키세요.", u:"https://link.coupang.com/a/dyKSYq", i:"https://thumbnail5.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/4f94/6c6381ff9643ca814ef14cd915e80d1e36b905111da517b18dc7930d9795.jpg"}
+        ];
+
+        function showHoro() {
+            const s = document.getElementById('zodiac').value, t = document.getElementById('horoTxt'), a = document.getElementById('luckyArea');
+            if(s) {
+                t.style.display = 'block';
+                const d = new Date(), seed = d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()+parseInt(s);
+                t.innerHTML = "🔱 <b>오늘의 천체 흐름 분석</b><br>토성과 목성이 조화를 이루는 길일입니다. 공들여 온 일들이 결실을 맺기 시작하니 내실을 기하세요.<br>오후 2시에서 4시 사이가 당신의 운기가 가장 강력하게 빛나는 골든타임입니다.<br>금전적으로는 지출을 최소화하고 저축의 기운을 모으는 것이 재물운을 지키는 비방입니다.<br>대인관계에서는 경청하는 태도가 행운을 불러오며, 소중한 대화 속에서 해답을 얻게 될 것입니다.<br>🏠 <b>풍수 조언</b>: 현관을 밝게 유지하고 불필요한 우편물을 정리하여 기운의 통로를 비우세요.";
+                const item = fengShui[seed % 12];
+                a.innerHTML = `<a href="${item.u}" target="_blank" class="lucky-item-card"><img src="${item.i}"><div class="lucky-info"><span style="font-size:0.72rem; color:var(--point-pink); font-weight:700; display:block;">🏠 ${item.r}</span><span style="font-size:0.9rem; font-weight:500;">✨ 행운템: ${item.n}</span></div><div class="go-btn">></div></a>`;
+            } else { t.style.display = 'none'; a.innerHTML = ''; }
         }
     </script>
 </body>
