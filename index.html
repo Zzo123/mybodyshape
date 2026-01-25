@@ -26,11 +26,13 @@
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; background: white; border-bottom: 1px solid #eee; }
         .nav-logo { font-size: 18px; font-weight: bold; color: var(--primary-pink); text-decoration: none; }
         
-        /* 언어 토글 버튼 스타일 */
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-link { font-size: 13px; color: #4b5563; text-decoration: none; cursor: pointer; font-weight: 500; }
+
         .lang-switch {
-            display: flex; gap: 5px; background: #f3f4f6; padding: 4px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer;
+            display: flex; gap: 2px; background: #f3f4f6; padding: 3px; border-radius: 20px; font-size: 11px; font-weight: bold; cursor: pointer;
         }
-        .lang-btn { padding: 5px 10px; border-radius: 15px; color: #9ca3af; transition: 0.3s; }
+        .lang-btn { padding: 4px 10px; border-radius: 15px; color: #9ca3af; transition: 0.3s; }
         .lang-btn.active { background: white; color: var(--primary-pink); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
         .container { max-width: 600px; margin: 20px auto; background: white; border-radius: 30px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; min-height: 600px; }
@@ -69,9 +71,12 @@
 
 <nav>
     <a href="#" class="nav-logo" id="nav-title">👙 체형 진단 테스트</a>
-    <div class="lang-switch" onclick="toggleLang()">
-        <span class="lang-btn active" id="btn-ko">KO</span>
-        <span class="lang-btn" id="btn-en">EN</span>
+    <div class="nav-right">
+        <div class="nav-link" id="nav-info" onclick="showInfo()">체형진단이란?</div>
+        <div class="lang-switch" onclick="toggleLang()">
+            <span class="lang-btn active" id="btn-ko">한국어</span>
+            <span class="lang-btn" id="btn-en">English</span>
+        </div>
     </div>
 </nav>
 
@@ -141,6 +146,8 @@
     const TEXTS = {
         ko: {
             nav: "👙 체형 진단 테스트",
+            navInfo: "체형진단이란?",
+            infoMsg: "골격 진단은 타고난 신체 특징을 분석해 가장 돋보이는 스타일을 제안하는 시스템입니다.",
             title: "골격 체형 테스트",
             desc: "나의 실루엣을 인공지능이 정밀 분석합니다.<br>장점을 극대화하는 인생 코디를 찾아보세요!",
             badgeFree: "✅ 평생 무료 서비스",
@@ -170,19 +177,21 @@
                 { q: "나의 베스트 소재는?", a: "빳빳한 면/실크", b: "쉬폰/니트", c: "린넨/데님" }
             ],
             res: {
-                S: { fTitle: "✨ 탄탄한 아우라, 스트레이트 체형", mTitle: "👔 듬직한 클래식, 스트레이트 체형", 
+                S: { fTitle: "✨ 스트레이트 체형", mTitle: "👔 스트레이트 체형", 
                      fDesc: "<strong>당신은 존재만으로도 건강한 에너지를 발산하는 '자기관리의 아이콘' 스타일입니다!</strong><br>몸 전체에 입체감이 살아있어 탄탄하고 탄력 있는 실루엣을 자랑합니다. 상하체 비율이 균형 잡혀 있어 기본 티셔츠와 데님만으로도 명품 핏을 완성합니다. 심플하고 클래식한 스타일이 당신의 고급스러움을 극대화합니다.<br><br><strong>🧥 추천:</strong> V넥 상의, 정사이즈 셔츠, 일자핏 슬랙스", 
                      mDesc: "<strong>당신은 신뢰감을 주는 '완벽한 피지컬'의 소유자입니다!</strong><br>가슴 두께감이 있고 근육이 잘 붙어 클래식한 수트 핏이 가장 잘 어울립니다. 상체에 무게 중심이 있어 듬직하고 에너제틱해 보이며, 깃이 선 셔츠나 깔끔한 니트로 중후한 멋을 낼 수 있습니다.<br><br><strong>🧥 추천:</strong> 깃이 선 셔츠, 정사이즈 수트, 가죽 로퍼" },
-                N: { fTitle: "🌸 수채화 무드, 웨이브 체형", mTitle: "💎 스타일리시 감성, 웨이브 체형",
+                N: { fTitle: "🌸 웨이브 체형", mTitle: "💎 웨이브 체형",
                      fDesc: "<strong>당신은 보호 본능을 자극하는 '청순하고 우아한' 스타일입니다!</strong><br>가늘고 부드러운 곡선 실루엣으로 여성스러운 분위기를 가장 잘 소화합니다. 가녀린 상체와 쇄골 라인이 독보적인 장점이며, 하이웨이스트나 A라인 스커트로 다리를 길어 보이게 연출하면 완벽합니다.<br><br><strong>🧥 추천:</strong> 하이웨이스트, 퍼프 블라우스, A라인 스커트", 
                      mDesc: "<strong>당신은 어떤 옷이든 감각적으로 소화하는 '섬세한 패셔니스타'입니다!</strong><br>상체 선이 가늘고 유연해 레이어드나 패턴 룩을 아주 스타일리시하게 소화합니다. 부드러운 인상을 주며, 포켓 셔츠나 니트로 상체에 볼륨을 더하면 완벽한 밸런스를 맞출 수 있습니다.<br><br><strong>🧥 추천:</strong> 포켓 셔츠, 세미 하이웨이스트 슬랙스, 부드러운 니트" },
-                C: { fTitle: "🕶 타고난 화보 장인, 내추럴 체형", mTitle: "🧥 시크 모델 포스, 내추럴 체형",
+                C: { fTitle: "🕶 내추럴 체형", mTitle: "🧥 내추럴 체형",
                      fDesc: "<strong>당신은 런웨이처럼 만드는 '독보적인 프레임'의 모델 스타일입니다!</strong><br>시원시원한 골격과 딱 잡힌 어깨 라인은 패셔니스타의 징표입니다. 박시하고 루즈한 핏도 시크한 화보처럼 소화하며, 린넨이나 데님 같은 거친 소재가 당신을 더욱 고급스럽게 만듭니다.<br><br><strong>🧥 추천:</strong> 와이드 팬츠, 오버핏 셔츠, 맥시 원피스", 
                      mDesc: "<strong>당신은 '옷발'이 가장 잘 받는 부러운 모델 체형입니다!</strong><br>타고난 뼈대가 멋스러워 남들은 소화하기 힘든 루즈핏이나 와이드 팬츠를 가장 시크하게 소화합니다. 무심하게 툭 걸친 오버사이즈 코트 한 장만으로도 압도적인 실루엣을 연출할 수 있습니다.<br><br><strong>🧥 추천:</strong> 오버사이즈 코트, 와이드 데님 팬츠, 볼드한 시계" }
             }
         },
         en: {
-            nav: "👙 Body Shape Analysis",
+            nav: "Body Shape Analysis",
+            navInfo: "What is this?",
+            infoMsg: "Body Shape Analysis system analyzes your natural physical features to suggest the most flattering styles.",
             title: "AI Body Shape Test",
             desc: "AI analyzes your silhouette precisely.<br>Find the best style that maximizes your charm!",
             badgeFree: "✅ Free Forever",
@@ -212,44 +221,36 @@
                 { q: "Best fabric for you?", a: "Stiff cotton/silk", b: "Chiffon/Soft knit", c: "Linen/Denim" }
             ],
             res: {
-                S: { fTitle: "✨ Healthy Aura, Straight Type", mTitle: "👔 Trustworthy Classic, Straight Type", 
+                S: { fTitle: "✨ Straight Type", mTitle: "👔 Straight Type", 
                      fDesc: "<strong>You are the icon of 'self-management' with healthy energy!</strong><br>Your body has volume and elasticity, giving you a fit look without much effort. With a balanced upper and lower body, you look luxurious even in a simple T-shirt and jeans. Simple and classic styles highlight your value the most.<br><br><strong>🧥 Best Pick:</strong> V-neck tops, Standard shirts, Straight slacks", 
                      mDesc: "<strong>You have the 'perfect physique' that gives a sense of trust!</strong><br>With a thick chest and well-attached muscles, you look best in classic suits. Your center of gravity is in the upper body, giving a reliable and energetic impression. Crisp shirts look amazing on you.<br><br><strong>🧥 Best Pick:</strong> Collared shirts, Classic suits, Loafers" },
-                N: { fTitle: "🌸 Soft Watercolor, Wave Type", mTitle: "💎 Stylish Mood, Wave Type",
+                N: { fTitle: "🌸 Wave Type", mTitle: "💎 Wave Type",
                      fDesc: "<strong>You have an 'elegant and innocent' style that sparks protective instincts!</strong><br>Your silhouette is made of soft curves, perfect for feminine styles. Your slender upper body and collarbones are unique assets. High-waisted bottoms make your legs look incredibly long.<br><br><strong>🧥 Best Pick:</strong> High-waist, Puff blouses, A-line skirts", 
                      mDesc: "<strong>You are a 'delicate fashionista' who pulls off any style!</strong><br>With a slender and flexible upper body, you look stylish in layered or patterned looks. Soft knits or shirts with pockets add volume to your upper body, creating a perfect balance.<br><br><strong>🧥 Best Pick:</strong> Pocket shirts, Semi-high waist slacks, Soft knits" },
-                C: { fTitle: "🕶 Born Model, Natural Type", mTitle: "🧥 Chic Model Force, Natural Type",
+                C: { fTitle: "🕶 Natural Type", mTitle: "🧥 Natural Type",
                      fDesc: "<strong>You have a 'unique frame' that turns any street into a runway!</strong><br>Your wide shoulders and cool skeletal frame are signs of a fashionista. You look chic even in boxy and loose fits. Rough materials like linen or denim transform into a luxurious mood on you.<br><br><strong>🧥 Best Pick:</strong> Wide pants, Overfit shirts, Maxi dresses", 
                      mDesc: "<strong>You have the 'model body' that looks good in anything!</strong><br>Born with a stylish frame, you pull off loose fits and wide pants more chicly than anyone else. An oversized coat draped casually creates an overwhelming silhouette.<br><br><strong>🧥 Best Pick:</strong> Oversized coats, Wide denim pants, Bold watches" }
             }
         }
     };
 
+    function showInfo() {
+        alert(TEXTS[currentLang].infoMsg);
+    }
+
     function toggleLang() {
         currentLang = currentLang === 'ko' ? 'en' : 'ko';
         updateUI();
-        // 질문 중이라면 질문 텍스트 업데이트
-        if (!document.getElementById('view-survey').classList.contains('hidden')) {
-            initSurvey();
-        }
-        // 결과 화면이라면 결과 텍스트 업데이트
-        if (!document.getElementById('view-result').classList.contains('hidden')) {
-            // 결과 다시 렌더링을 위해 간단히 처리 (실제 데이터는 그대로)
-            const t = TEXTS[currentLang];
-            const rData = currentLang === 'ko' ? 
-                (currentGender === 'male' ? TEXTS.ko.res[winnerKey].mTitle : TEXTS.ko.res[winnerKey].fTitle) : 
-                (currentGender === 'male' ? TEXTS.en.res[winnerKey].mTitle : TEXTS.en.res[winnerKey].fTitle);
-            // ... (결과 화면 갱신 로직은 finalize 함수 호출이 가장 깔끔하지만 데이터 유지가 필요함)
-            finalize(); 
-        }
+        if (!document.getElementById('view-survey').classList.contains('hidden')) initSurvey();
+        if (!document.getElementById('view-result').classList.contains('hidden')) finalize();
     }
 
     function updateUI() {
         const t = TEXTS[currentLang];
         document.getElementById('btn-ko').classList.toggle('active', currentLang === 'ko');
         document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
-        
         document.getElementById('nav-title').innerText = t.nav;
+        document.getElementById('nav-info').innerText = t.navInfo;
         document.getElementById('main-title').innerText = t.title;
         document.getElementById('main-desc').innerHTML = t.desc;
         document.getElementById('badge-free').innerText = t.badgeFree;
@@ -270,7 +271,7 @@
     const MODEL_URL = "https://teachablemachine.withgoogle.com/models/Y9Y9vIofD/"; 
     let model, aiData = { S: 0, N: 0, C: 0 }, surveyData = { S: 0, N: 0, C: 0 };
     let currentGender = 'female';
-    let winnerKey = 'S'; // 결과 저장용
+    let winnerKey = 'S';
 
     function setGender(g) {
         currentGender = g;
@@ -324,29 +325,16 @@
     function finalize() {
         document.getElementById('view-survey').classList.add('hidden');
         document.getElementById('view-result').classList.remove('hidden');
-        
-        // 결과 계산 (최초 1회만 수행하거나, 언어 변경시에는 다시 계산해도 무방)
         const total = {
             S: (aiData.S * 0.5) + ((surveyData.S / 10) * 0.5),
             N: (aiData.N * 0.5) + ((surveyData.N / 10) * 0.5),
             C: (aiData.C * 0.5) + ((surveyData.C / 10) * 0.5)
         };
-        // winnerKey는 전역 변수로 관리하여 언어 변경 시에도 동일 결과 유지
-        if (aiData.S + aiData.N + aiData.C > 0) { // AI 데이터가 있을 때만 계산
-             winnerKey = Object.keys(total).reduce((a, b) => total[a] > total[b] ? a : b);
-        }
-
+        if (aiData.S + aiData.N + aiData.C > 0) winnerKey = Object.keys(total).reduce((a, b) => total[a] > total[b] ? a : b);
         const tRes = TEXTS[currentLang].res[winnerKey];
         const resData = currentGender === 'male' ? { title: tRes.mTitle, desc: tRes.mDesc } : { title: tRes.fTitle, desc: tRes.fDesc };
-        
-        // 이미지 경로는 언어와 상관없이 동일
-        const imgMap = {
-            'S': { f: "./images/female_straight.jpg", m: "./images/male_straight.jpg" },
-            'N': { f: "./images/female_wave.jpg", m: "./images/male_wave.jpg" },
-            'C': { f: "./images/female_natural.jpg", m: "./images/male_natural.jpg" }
-        };
+        const imgMap = { 'S': { f: "./images/female_straight.jpg", m: "./images/male_straight.jpg" }, 'N': { f: "./images/female_wave.jpg", m: "./images/male_wave.jpg" }, 'C': { f: "./images/female_natural.jpg", m: "./images/male_natural.jpg" } };
         const resImg = currentGender === 'male' ? imgMap[winnerKey].m : imgMap[winnerKey].f;
-
         document.getElementById('res-title').innerText = resData.title;
         document.getElementById('res-body').innerHTML = `<div style="text-align:center;"><img src="${resImg}" style="width:50%; max-width:150px; border:none; box-shadow:none; margin-bottom:20px;"></div>${resData.desc}`;
     }
@@ -363,18 +351,13 @@
             navigator.share({ title: TEXTS[currentLang].shareTitle, url: window.location.href });
         } else {
             const dummy = document.createElement("input");
-            document.body.appendChild(dummy);
-            dummy.value = window.location.href; dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-            
+            document.body.appendChild(dummy); dummy.value = window.location.href; dummy.select();
+            document.execCommand("copy"); document.body.removeChild(dummy);
             const toast = document.getElementById("toast");
-            toast.classList.add("show");
-            setTimeout(() => { toast.classList.remove("show"); }, 2500);
+            toast.classList.add("show"); setTimeout(() => { toast.classList.remove("show"); }, 2500);
         }
     }
 
-    // 불펌 방지
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         alert(currentLang === 'ko' ? '저작권 보호를 위해 이미지 무단 저장 및 복사를 금지합니다.' : 'Image saving/copying is disabled for copyright protection.');
