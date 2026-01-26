@@ -366,10 +366,10 @@
     }
 
     const MODEL_URL = "https://teachablemachine.withgoogle.com/models/Y9Y9vIofD/"; 
-    let model, aiData = { S: 0, N: 0, C: 0 }, surveyData = { S: 0, N: 0, C: 0 };
+    let model = null; // Initialize model as null
+    let aiData = { S: 0, N: 0, C: 0 }, surveyData = { S: 0, N: 0, C: 0 };
     let currentGender = 'female';
     let winnerKey = 'S';
-    let isModelLoaded = false;
 
     function setGender(g) {
         currentGender = g;
@@ -377,57 +377,57 @@
         document.getElementById('btn-male').classList.toggle('active', g === 'male');
     }
 
+    // Function to load the Teachable Machine model
     async function loadTM() { 
-        try {
-            document.getElementById('upload-main').innerText = "AI 모델을 로딩 중입니다...";
-            document.getElementById('upload-sub').innerText = "잠시만 기다려주세요 (최초 1회)";
-            
-            model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json"); 
-            
-            isModelLoaded = true;
-            document.getElementById('upload-main').innerText = TEXTS[currentLang].upMain;
-            document.getElementById('upload-sub').innerText = TEXTS[currentLang].upSub;
-            console.log("TM Model loaded successfully");
+        if (model) return model; // Model already loaded
+        try { 
+            console.log("Loading Teachable Machine model...");
+            model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json");
+            console.log("Teachable Machine model loaded successfully.");
+            return model;
         } catch(e) {
-            console.error("Error loading model:", e);
+            console.error("Error loading Teachable Machine model:", e);
             alert("AI 모델 로딩에 실패했습니다. 페이지를 새로고침 해주세요.");
+            return null;
         } 
     }
-    loadTM();
+    loadTM(); // Start loading the model immediately
 
     async function processAI(input) {
-        if (!isModelLoaded) {
-            alert("AI 모델이 로딩 중입니다. 잠시만 기다려주세요!");
-            return;
-        }
         if (!input.files || !input.files[0]) return;
         
         document.getElementById('view-upload').classList.add('hidden');
         document.getElementById('view-loading').classList.remove('hidden');
-        document.getElementById('loading-title').innerText = "이미지를 분석 중입니다...";
+        document.getElementById('loading-title').innerText = "이미지를 분석 중입니다..."; // Generic loading message
 
         try {
+            // Ensure model is loaded before proceeding
+            if (!model) {
+                document.getElementById('loading-title').innerText = "AI 모델 로딩 중...";
+                await loadTM();
+                if (!model) { // If model failed to load even after awaiting
+                    throw new Error("AI Model could not be loaded.");
+                }
+                document.getElementById('loading-title').innerText = "이미지를 분석 중입니다...";
+            }
+
             const file = input.files[0];
             const img = new Image();
             
             img.onload = async () => {
                 try {
-                    if (model) {
-                        const pred = await model.predict(img);
-                        pred.forEach(p => {
-                            if (p.className.includes("Straight")) aiData.S = p.probability;
-                            if (p.className.includes("Wave")) aiData.N = p.probability;
-                            if (p.className.includes("Natural")) aiData.C = p.probability;
-                        });
-                        
-                        setTimeout(() => {
-                            document.getElementById('view-loading').classList.add('hidden');
-                            document.getElementById('view-survey').classList.remove('hidden');
-                            initSurvey();
-                        }, 1500);
-                    } else {
-                        throw new Error("Model not loaded");
-                    }
+                    const pred = await model.predict(img);
+                    pred.forEach(p => {
+                        if (p.className.includes("Straight")) aiData.S = p.probability;
+                        if (p.className.includes("Wave")) aiData.N = p.probability;
+                        if (p.className.includes("Natural")) aiData.C = p.probability;
+                    });
+                    
+                    setTimeout(() => {
+                        document.getElementById('view-loading').classList.add('hidden');
+                        document.getElementById('view-survey').classList.remove('hidden');
+                        initSurvey();
+                    }, 1500);
                 } catch (innerError) {
                     console.error("Analysis Error:", innerError);
                     alert("분석 중 오류가 발생했습니다: " + innerError.message);
