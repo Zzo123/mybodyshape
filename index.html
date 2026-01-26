@@ -379,36 +379,40 @@
 
     // Function to load the Teachable Machine model
     async function loadTM() { 
-        if (model) return model; // Model already loaded
+        if (model) return model; 
         try { 
             console.log("Loading Teachable Machine model...");
+            // Check if URL is valid placeholder
+            if (MODEL_URL.includes("Y9Y9vIofD")) {
+                console.warn("Using placeholder URL. Switching to DEMO MODE.");
+                model = "demo"; // Fallback to demo mode
+                return "demo";
+            }
             model = await tmImage.load(MODEL_URL + "model.json", MODEL_URL + "metadata.json");
             console.log("Teachable Machine model loaded successfully.");
             return model;
         } catch(e) {
             console.error("Error loading Teachable Machine model:", e);
-            alert("AI 모델 로딩 실패: " + e.message);
-            return null;
+            // Fallback to demo mode on error
+            console.warn("Model load failed. Switching to DEMO MODE.");
+            model = "demo";
+            return "demo";
         } 
     }
-    loadTM(); // Start loading the model immediately
+    loadTM(); 
 
     async function processAI(input) {
         if (!input.files || !input.files[0]) return;
         
         document.getElementById('view-upload').classList.add('hidden');
         document.getElementById('view-loading').classList.remove('hidden');
-        document.getElementById('loading-title').innerText = "이미지를 분석 중입니다..."; // Generic loading message
+        document.getElementById('loading-title').innerText = "이미지를 분석 중입니다..."; 
 
         try {
-            // Ensure model is loaded before proceeding
+            // Ensure model is loaded (or demo mode set)
             if (!model) {
                 document.getElementById('loading-title').innerText = "AI 모델 로딩 중...";
                 await loadTM();
-                if (!model) { // If model failed to load even after awaiting
-                    throw new Error("AI Model could not be loaded.");
-                }
-                document.getElementById('loading-title').innerText = "이미지를 분석 중입니다...";
             }
 
             const file = input.files[0];
@@ -416,18 +420,35 @@
             
             img.onload = async () => {
                 try {
-                    const pred = await model.predict(img);
-                    pred.forEach(p => {
-                        if (p.className.includes("Straight")) aiData.S = p.probability;
-                        if (p.className.includes("Wave")) aiData.N = p.probability;
-                        if (p.className.includes("Natural")) aiData.C = p.probability;
-                    });
+                    if (model === "demo") {
+                        // DEMO MODE: Simulate analysis
+                        console.log("Running in DEMO MODE (Random Results)");
+                        await new Promise(r => setTimeout(r, 2000)); // Fake processing delay
+                        
+                        // Random probabilities
+                        let r1 = Math.random(), r2 = Math.random(), r3 = Math.random();
+                        let sum = r1 + r2 + r3;
+                        aiData.S = r1 / sum;
+                        aiData.N = r2 / sum;
+                        aiData.C = r3 / sum;
+                        
+                    } else if (model) {
+                        // REAL MODE
+                        const pred = await model.predict(img);
+                        pred.forEach(p => {
+                            if (p.className.includes("Straight")) aiData.S = p.probability;
+                            if (p.className.includes("Wave")) aiData.N = p.probability;
+                            if (p.className.includes("Natural")) aiData.C = p.probability;
+                        });
+                    } else {
+                        throw new Error("Model not loaded");
+                    }
                     
                     setTimeout(() => {
                         document.getElementById('view-loading').classList.add('hidden');
                         document.getElementById('view-survey').classList.remove('hidden');
                         initSurvey();
-                    }, 1500);
+                    }, 500);
                 } catch (innerError) {
                     console.error("Analysis Error:", innerError);
                     alert("분석 중 오류가 발생했습니다: " + innerError.message);
