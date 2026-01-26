@@ -497,11 +497,11 @@
         const tRes = TEXTS[currentLang].res[winnerKey];
         const resData = currentGender === 'male' ? { title: tRes.mTitle, desc: tRes.mDesc } : { title: tRes.fTitle, desc: tRes.fDesc };
         
-        // Image Mapping (Corrected Paths)
+        // Image Mapping (Using Placeholders temporarily)
         const imgMap = { 
-            'S': { f: "images/female_straight.jpg", m: "images/male_straight.jpg" }, 
-            'N': { f: "images/female_wave.jpg", m: "images/male_wave.jpg" }, 
-            'C': { f: "images/female_natural.jpg", m: "images/male_natural.jpg" } 
+            'S': { f: "https://via.placeholder.com/300x400?text=Female+Straight", m: "https://via.placeholder.com/300x400?text=Male+Straight" }, 
+            'N': { f: "https://via.placeholder.com/300x400?text=Female+Wave", m: "https://via.placeholder.com/300x400?text=Male+Wave" }, 
+            'C': { f: "https://via.placeholder.com/300x400?text=Female+Natural", m: "https://via.placeholder.com/300x400?text=Male+Natural" } 
         };
         const resImg = currentGender === 'male' ? imgMap[winnerKey].m : imgMap[winnerKey].f;
         
