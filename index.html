@@ -8,8 +8,8 @@
     <!-- 구글 애드센스 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3735666512605515" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         :root { --primary-pink: #f43f5e; --sub-gray: #6b7280; --bg-light: #f9fafb; --trust-green: #059669; }
@@ -387,7 +387,7 @@
             return model;
         } catch(e) {
             console.error("Error loading Teachable Machine model:", e);
-            alert("AI 모델 로딩에 실패했습니다. 페이지를 새로고침 해주세요.");
+            alert("AI 모델 로딩 실패: " + e.message);
             return null;
         } 
     }
