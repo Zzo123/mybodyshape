@@ -140,24 +140,24 @@
 
         <!-- Explanatory Text Section -->
         <div class="info-section">
-            <h3>🧐 체형 진단은 어떤 원리인가요?</h3>
-            <p>
+            <h3 id="info-title1">🧐 체형 진단은 어떤 원리인가요?</h3>
+            <p id="info-desc1">
                 본 테스트는 구글의 Teachable Machine 2.0 인공지능 모델을 활용하여 제작되었습니다. 
                 수천 장의 체형 데이터를 학습한 AI가 사용자의 사진에서 어깨 라인, 골반의 너비, 
                 전체적인 실루엣 등 미세한 특징을 추출하여 가장 유사한 골격 유형을 분석합니다.
             </p>
-            <p>
+            <p id="info-desc2">
                 단순히 '마르다/통통하다'를 구분하는 것이 아니라, 타고난 뼈대와 근육의 붙는 방식을 
                 기준으로 <strong>스트레이트(Straight), 웨이브(Wave), 내추럴(Natural)</strong> 
                 세 가지 타입으로 분류합니다.
             </p>
             
-            <h3>✨ 왜 내 체형을 알아야 할까요?</h3>
-            <p>
+            <h3 id="info-title2">✨ 왜 내 체형을 알아야 할까요?</h3>
+            <p id="info-desc3">
                 "유행하는 옷인데 내가 입으면 이상할까?" 고민해 본 적 있으신가요? 
                 그것은 몸매의 문제가 아니라, '내 골격에 맞지 않는 디자인'을 입었기 때문일 수 있습니다.
             </p>
-            <p>
+            <p id="info-desc4">
                 자신의 골격 타입을 알면 <strong>① 단점은 가리고 장점은 부각하는 스타일링</strong>이 가능해지며, 
                 <strong>② 불필요한 옷 쇼핑 실패를 줄여</strong> 경제적인 소비를 할 수 있습니다. 
                 이제 무작정 유행을 쫓기보다, 나를 가장 빛나게 해주는 '인생 핏'을 찾아보세요.
@@ -241,6 +241,12 @@
             btnRetry: "다시 테스트하기",
             toast: "링크가 복사되었습니다!",
             shareTitle: "AI 골격 체형 진단",
+            infoTitle1: "🧐 체형 진단은 어떤 원리인가요?",
+            infoDesc1: "본 테스트는 구글의 Teachable Machine 2.0 인공지능 모델을 활용하여 제작되었습니다. 수천 장의 체형 데이터를 학습한 AI가 사용자의 사진에서 어깨 라인, 골반의 너비, 전체적인 실루엣 등 미세한 특징을 추출하여 가장 유사한 골격 유형을 분석합니다.",
+            infoDesc2: "단순히 '마르다/통통하다'를 구분하는 것이 아니라, 타고난 뼈대와 근육의 붙는 방식을 기준으로 <strong>스트레이트(Straight), 웨이브(Wave), 내추럴(Natural)</strong> 세 가지 타입으로 분류합니다.",
+            infoTitle2: "✨ 왜 내 체형을 알아야 할까요?",
+            infoDesc3: "\"유행하는 옷인데 내가 입으면 이상할까?\" 고민해 본 적 있으신가요? 그것은 몸매의 문제가 아니라, '내 골격에 맞지 않는 디자인'을 입었기 때문일 수 있습니다.",
+            infoDesc4: "자신의 골격 타입을 알면 <strong>① 단점은 가리고 장점은 부각하는 스타일링</strong>이 가능해지며, <strong>② 불필요한 옷 쇼핑 실패를 줄여</strong> 경제적인 소비를 할 수 있습니다. 이제 무작정 유행을 쫓기보다, 나를 가장 빛나게 해주는 '인생 핏'을 찾아보세요.",
             qBank: [
                 { q: "목의 길이는 어떤가요?", a: "비교적 짧고 어깨선이 직선적임", b: "가늘고 긴 편임", c: "길고 뼈대가 뚜렷함" },
                 { q: "쇄골 모양은 어떤가요?", a: "거의 보이지 않음", b: "가늘게 존재감이 있음", c: "굵고 도드라짐" },
@@ -285,6 +291,12 @@
             btnRetry: "Test Again",
             toast: "Link copied to clipboard!",
             shareTitle: "AI Body Shape Analysis",
+            infoTitle1: "🧐 How does it work?",
+            infoDesc1: "This test is built using Google's Teachable Machine 2.0 AI model. The AI, trained on thousands of body shape images, extracts subtle features such as shoulder lines, pelvis width, and overall silhouette to analyze the most similar skeletal type.",
+            infoDesc2: "It doesn't just distinguish between 'thin/chubby', but classifies body types into three categories: <strong>Straight, Wave, and Natural</strong> based on the innate skeletal frame and muscle attachment.",
+            infoTitle2: "✨ Why should I know my body type?",
+            infoDesc3: "Have you ever wondered, \"Why does this trendy outfit look weird on me?\" It might not be about your body shape, but because you're wearing a design that doesn't fit your skeletal frame.",
+            infoDesc4: "Knowing your skeletal type allows you to <strong>① style to hide flaws and highlight strengths</strong>, and <strong>② reduce unnecessary shopping failures</strong> for economical consumption. Instead of blindly following trends, find the 'life fit' that makes you shine the most.",
             qBank: [
                 { q: "How is your neck length?", a: "Relatively short, straight shoulders", b: "Thin and long", c: "Long with prominent bones" },
                 { q: "How are your collarbones?", a: "Barely visible", b: "Thin but visible", c: "Thick and prominent" },
@@ -343,6 +355,14 @@
         document.getElementById('btn-share').innerText = t.btnShare;
         document.getElementById('btn-retry').innerText = t.btnRetry;
         document.getElementById('toast').innerText = t.toast;
+        
+        // Update Info Section
+        document.getElementById('info-title1').innerText = t.infoTitle1;
+        document.getElementById('info-desc1').innerText = t.infoDesc1;
+        document.getElementById('info-desc2').innerHTML = t.infoDesc2;
+        document.getElementById('info-title2').innerText = t.infoTitle2;
+        document.getElementById('info-desc3').innerText = t.infoDesc3;
+        document.getElementById('info-desc4').innerHTML = t.infoDesc4;
     }
 
     const MODEL_URL = "https://teachablemachine.withgoogle.com/models/Y9Y9vIofD/"; 
