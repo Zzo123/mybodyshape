@@ -400,60 +400,79 @@
         }
         loadTM();
     
-        async function processAI(input) {
-            if (!isModelLoaded) {
-                alert("AI 모델이 아직 로딩 중입니다. 잠시만 기다려주세요!");
-                return;
-            }
-            if (!input.files[0]) return;
-            
-            document.getElementById('view-upload').classList.add('hidden');
-            document.getElementById('view-loading').classList.remove('hidden');
-            
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(input.files[0]);
-            
-            img.onload = async () => {
+            async function processAI(input) {
+                if (!isModelLoaded) {
+                    alert("AI 모델이 로딩 중입니다. 5초 뒤에 다시 시도해주세요!");
+                    return;
+                }
+                if (!input.files || !input.files[0]) return;
+                
+                // UI Feedback immediately
+                document.getElementById('view-upload').classList.add('hidden');
+                document.getElementById('view-loading').classList.remove('hidden');
+                document.getElementById('loading-title').innerText = "이미지를 분석 준비 중...";
+        
                 try {
-                    // 1. Detect Person
-                    if (cocoModel) {
-                        const predictions = await cocoModel.detect(img);
-                        const hasPerson = predictions.some(p => p.class === 'person');
-                        
-                        if (!hasPerson) {
-                            alert(currentLang === 'ko' ? "⚠️ 사람이 감지되지 않았습니다. 전신이 나온 사진을 올려주세요!" : "⚠️ No person detected. Please upload a full-body photo!");
-                            location.reload();
-                            return;
-                        }
-                    } else {
-                        console.warn("Coco SSD model not loaded, skipping person detection.");
-                    }
-    
-                    // 2. Analyze Body Shape
-                    if (model) {
-                        const pred = await model.predict(img);
-                        pred.forEach(p => {
-                            if (p.className.includes("Straight")) aiData.S = p.probability;
-                            if (p.className.includes("Wave")) aiData.N = p.probability;
-                            if (p.className.includes("Natural")) aiData.C = p.probability;
-                        });
-                    } else {
-                        throw new Error("Teachable Machine model not loaded");
-                    }
+                    const file = input.files[0];
+                    const img = new Image();
                     
-                    setTimeout(() => {
-                        document.getElementById('view-loading').classList.add('hidden');
-                        document.getElementById('view-survey').classList.remove('hidden');
-                        initSurvey();
-                    }, 3000);
+                    img.onload = async () => {
+                        try {
+                            document.getElementById('loading-title').innerText = "사람 인식 중...";
+                            
+                            // 1. Detect Person
+                            if (cocoModel) {
+                                const predictions = await cocoModel.detect(img);
+                                // Check for person (allow if confidence > 0.5 to be safe, or just existence)
+                                const hasPerson = predictions.some(p => p.class === 'person');
+                                
+                                if (!hasPerson) {
+                                    alert(currentLang === 'ko' ? "⚠️ 사진에서 사람을 찾을 수 없습니다. 전신이 잘 나온 사진을 올려주세요." : "⚠️ No person detected. Please upload a clear full-body photo.");
+                                    location.reload();
+                                    return;
+                                }
+                            }
+        
+                            document.getElementById('loading-title').innerText = "체형 분석 중...";
+        
+                            // 2. Analyze Body Shape
+                            if (model) {
+                                const pred = await model.predict(img);
+                                pred.forEach(p => {
+                                    if (p.className.includes("Straight")) aiData.S = p.probability;
+                                    if (p.className.includes("Wave")) aiData.N = p.probability;
+                                    if (p.className.includes("Natural")) aiData.C = p.probability;
+                                });
+                                
+                                // Success! Move to survey
+                                setTimeout(() => {
+                                    document.getElementById('view-loading').classList.add('hidden');
+                                    document.getElementById('view-survey').classList.remove('hidden');
+                                    initSurvey();
+                                }, 1000);
+                            } else {
+                                throw new Error("Main model not loaded");
+                            }
+                        } catch (innerError) {
+                            console.error("Analysis Error:", innerError);
+                            alert("분석 중 오류가 발생했습니다: " + innerError.message);
+                            location.reload();
+                        }
+                    };
+                    
+                    img.onerror = () => {
+                        alert("이미지 로드에 실패했습니다.");
+                        location.reload();
+                    };
+        
+                    img.src = URL.createObjectURL(file);
+                    
                 } catch (error) {
-                    console.error("AI Processing Error:", error);
-                    alert("분석 중 오류가 발생했습니다. 다른 사진으로 시도해 주세요.");
+                    console.error("Setup Error:", error);
+                    alert("초기화 중 오류가 발생했습니다.");
                     location.reload();
                 }
-            };
-        }
-    let qIdx = 0;
+            }    let qIdx = 0;
     function initSurvey() {
         const qList = TEXTS[currentLang].qBank;
         if (qIdx >= qList.length) return finalize();
