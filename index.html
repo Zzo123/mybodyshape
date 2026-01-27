@@ -138,13 +138,13 @@
 <div class="container">
     <div id="view-upload">
         <div class="header">
-            <h1 id="main-title">골격 체형 테스트</h1>
-            <p id="main-desc">나의 실루엣을 인공지능이 정밀 분석합니다.<br>장점을 극대화하는 인생 코디를 찾아보세요!</p>
+            <h1 id="main-title">내 체형에 어울리는 옷은 뭘까?</h1>
+            <p id="main-desc">AI가 사진 한 장으로 당신의 체형을 분석해<br>가장 빛나는 스타일을 찾아드려요!</p>
         </div>
 
         <div class="trust-badge-container">
-            <div class="trust-badge" id="badge-free">✅ 평생 무료 서비스</div>
-            <div class="trust-badge" id="badge-secure">🔒 사진 미저장 보장</div>
+            <div class="trust-badge" id="badge-free">✅ 100% 무료</div>
+            <div class="trust-badge" id="badge-secure">🔒 사진 절대 저장 안심</div>
         </div>
 
         <div class="gender-group">
@@ -153,40 +153,39 @@
         </div>
 
         <div class="guide-notice" id="guide-box">
-            💡 <strong>정확한 진단을 위한 팁</strong><br>
-            몸의 외곽 라인이 잘 보이는 옷을 입고 촬영하면 판독 정확도가 올라갑니다!
+            💡 <strong>정확한 분석을 원하시나요?</strong><br>
+            몸의 라인이 잘 드러나는 옷을 입고 전신을 찍어주시면 AI가 더 정확하게 판독할 수 있어요.
         </div>
 
         <div class="upload-area" onclick="document.getElementById('img-input').click()">
             <div class="upload-icon">📷</div>
-            <p style="font-weight: bold; margin-bottom: 5px;" id="upload-main">전신 사진을 선택하세요!</p>
-            <span style="font-size: 12px; color: #9ca3af;" id="upload-sub">사진을 올리면 자동으로 판독이 시작됩니다</span>
+            <p style="font-weight: bold; margin-bottom: 5px;" id="upload-main">여기를 눌러 전신 사진을 올려주세요</p>
+            <span style="font-size: 12px; color: #9ca3af;" id="upload-sub">사진을 올리면 AI 분석이 바로 시작돼요</span>
             <input type="file" id="img-input" class="hidden" accept="image/*" onchange="processAI(this)">
         </div>
 
         <!-- Explanatory Text Section -->
         <div class="info-section">
-            <h3 id="info-title1">🧐 체형 진단은 어떤 원리인가요?</h3>
+            <h3 id="info-title1">🤔 AI 체형 분석, 어떤 원리인가요?</h3>
             <p id="info-desc1">
-                본 테스트는 구글의 Teachable Machine 2.0 인공지능 모델을 활용하여 제작되었습니다. 
-                수천 장의 체형 데이터를 학습한 AI가 사용자의 사진에서 어깨 라인, 골반의 너비, 
-                전체적인 실루엣 등 미세한 특징을 추출하여 가장 유사한 골격 유형을 분석합니다.
-            </p>
-            <p id="info-desc2">
-                단순히 '마르다/통통하다'를 구분하는 것이 아니라, 타고난 뼈대와 근육의 붙는 방식을 
-                기준으로 <strong>스트레이트(Straight), 웨이브(Wave), 내추럴(Natural)</strong> 
-                세 가지 타입으로 분류합니다.
+                궁금해하시는 분들이 많더라고요! 저희 서비스는 수천 장의 체형 데이터를 학습한 AI를 사용해요. 
+                단순히 마른 체형, 통통한 체형을 나누는 게 아니에요. 사용자의 사진에서 어깨 라인, 골반 너비, 
+                전체적인 실루엣 같은 고유한 특징을 찾아내서, 타고난 골격과 가장 가까운 타입을 분석해준답니다. 
+                이것을 '골격 진단'이라고 불러요.
             </p>
             
-            <h3 id="info-title2">✨ 왜 내 체형을 알아야 할까요?</h3>
+            <h3 id="info-title2">✨ 내 체형, 왜 아는 게 좋을까요?</h3>
             <p id="info-desc3">
-                "유행하는 옷인데 내가 입으면 이상할까?" 고민해 본 적 있으신가요? 
-                그것은 몸매의 문제가 아니라, '내 골격에 맞지 않는 디자인'을 입었기 때문일 수 있습니다.
+                "저 옷, 모델이 입었을 땐 예뻤는데... 내가 입으니까 왜 어색하지?" 이런 생각, 한 번쯤 해보셨죠? 
+                그건 절대 여러분의 몸매 탓이 아니에요! 나의 체형과 옷의 디자인이 맞지 않았을 뿐이랍니다.
             </p>
             <p id="info-desc4">
-                자신의 골격 타입을 알면 <strong>① 단점은 가리고 장점은 부각하는 스타일링</strong>이 가능해지며, 
-                <strong>② 불필요한 옷 쇼핑 실패를 줄여</strong> 경제적인 소비를 할 수 있습니다. 
-                이제 무작정 유행을 쫓기보다, 나를 가장 빛나게 해주는 '인생 핏'을 찾아보세요.
+                내 체형을 알면 어떤 점이 좋을까요?
+                <ul>
+                    <li>✅ 나의 장점은 살리고, 단점은 가려주는 옷을 고를 수 있어요.</li>
+                    <li>✅ "이건 나한테 안 어울려!" 하고 불필요한 쇼핑을 줄일 수 있죠.</li>
+                    <li>✅ 유행만 쫓는 게 아니라, 나를 가장 멋지게 만드는 '인생 스타일'을 찾게 돼요!</li>
+                </ul>
             </p>
         </div>
 
