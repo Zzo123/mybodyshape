@@ -5,18 +5,18 @@
 
 ## 2. 기술 스택 (Tech Stack)
 *   **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-*   **AI/ML:** 
+*   **AI/ML:**
     *   Google Teachable Machine Image Model (체형 분류)
     *   TensorFlow.js `coco-ssd` (사람 감지 및 필터링)
 *   **Utilities:** html2canvas (결과 이미지 저장)
 *   **Deployment:** Firebase Hosting (예정/설정됨)
 
 ## 3. 주요 기능 (Features)
-*   **AI 이미지 분석:** 
+*   **AI 이미지 분석:**
     *   **1단계:** `coco-ssd` 모델로 사진 속에 사람이 있는지 확인 (동물/사물 필터링).
     *   **2단계:** 사람이 감지되면 Teachable Machine 모델로 3가지 골격 타입 확률 계산.
 *   **추가 설문조사:** AI 분석의 정확도를 보완하기 위한 자가 진단 설문 기능.
-*   **상세 결과 리포트:** 
+*   **상세 결과 리포트:**
     *   체형별 긍정적인 멘트와 장점 강조 (7줄 이상).
     *   단점 보완을 위한 구체적인 스타일링 가이드.
     *   동일 체형의 연예인 예시 및 추천 아이템 제공.
@@ -33,8 +33,19 @@
 *   **privacy.html:** 개인정보처리방침 (AdSense 필수).
 *   **about.html:** 서비스 소개.
 *   **contact.html:** 문의하기.
+*   **robots.txt:** 검색 엔진 크롤러 제어.
+*   **sitemap.xml:** 사이트맵 제공.
 
-## 5. 최근 변경 사항 (Recent Changes) - 2026.01.26
+## 5. SEO 최적화 (SEO Optimization) - 2026.01.27
+*   **`robots.txt` 생성:** 모든 검색 엔진의 크롤링을 허용하도록 설정.
+*   **`sitemap.xml` 생성:** 사이트의 모든 페이지(`index.html`, `about.html`, `contact.html`, `privacy.html`)를 포함하는 사이트맵 제공.
+*   **메타 태그 추가:**
+    *   모든 HTML 페이지에 `description`, `keywords`, `author` 메타 태그 추가.
+    *   `og:title`, `og:description`, `og:image`, `og:url` 등 Open Graph 태그 추가하여 소셜 공유 최적화.
+*   **이미지 `alt` 속성 추가:** `index.html` 내 모든 `<img>` 태그에 의미있는 `alt` 텍스트 추가.
+*   **시맨틱 HTML 개선:** 논리적인 헤더 태그 사용 및 구조 검토.
+
+## 6. 최근 변경 사항 (Recent Changes) - 2026.01.26
 *   **사람 감지 기능 도입:** `coco-ssd` 모델을 추가하여 사람 사진이 아닐 경우 분석을 거부하는 로직 구현.
 *   **결과 콘텐츠 대폭 보강:** 결과 화면의 텍스트를 단순 요약에서 칭찬, 보완 가이드, 연예인 예시가 포함된 풍부한 콘텐츠로 업데이트.
 *   **이미지 경로 수정:** 결과 화면에서 이미지가 나오지 않던 버그 수정 및 예외 처리(`onerror`) 추가.
