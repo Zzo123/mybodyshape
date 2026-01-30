@@ -4,64 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서비스 소개 - AI 체형 진단</title>
-    <meta name="description" content="AI 체형 진단 서비스의 개발 배경과 목표를 알아보세요. 저희는 당신의 고유한 아름다움을 발견하고 자신감을 찾도록 돕습니다.">
-    <meta name="keywords" content="AI 체형 진단, 서비스 소개, 골격 진단, 스타일링, 패션, about us">
-    <meta name="author" content="뷰스타 쪼">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mybodyshape.pages.dev/about.html">
-    <meta property="og:title" content="서비스 소개 - AI 체형 진단">
-    <meta property="og:description" content="AI 체형 진단 서비스의 개발 배경과 목표를 알아보세요.">
-    <meta property="og:image" content="https://mybodyshape.pages.dev/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mybodyshape.pages.dev/about.html">
-    <meta property="twitter:title" content="서비스 소개 - AI 체형 진단">
-    <meta property="twitter:description" content="AI 체형 진단 서비스의 개발 배경과 목표를 알아보세요.">
-    <meta property="twitter:image" content="https://mybodyshape.pages.dev/images/og-image.jpg">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCQQV9TVKG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MCQQV9TVKG');
-    </script>
+    <meta name="description" content="AI 체형 진단 (MyBodyShape)은 당신의 고유한 아름다움을 발견하고, 자신감 있는 스타일을 찾도록 돕기 위해 만들어졌습니다. 우리의 미션과 기술을 확인해보세요.">
+    <meta name="author" content="MyBodyShape Team">
     <style>
-        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; color: #333; }
-        h1 { color: #f43f5e; }
-        .intro-box { background: #fff1f2; padding: 20px; border-radius: 15px; margin: 20px 0; border: 1px solid #fecdd3; }
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.8; padding: 20px; max-width: 800px; margin: 0 auto; color: #333; background-color: #f9fafb; }
+        h1 { color: #f43f5e; border-bottom: 2px solid #eee; padding-bottom: 10px; font-size: 2em; text-align: center; }
+        h2 { margin-top: 40px; font-size: 1.5em; color: #1f2937; border-left: 4px solid #f43f5e; padding-left: 10px;}
+        p { font-size: 1em; color: #4b5563; }
         .back-link { display: inline-block; margin-bottom: 20px; color: #6b7280; text-decoration: none; font-weight: bold; }
         .back-link:hover { color: #f43f5e; }
+        .container { background-color: #fff; padding: 20px 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; }
+        .highlight { background-color: #fff1f2; padding: 15px; border-radius: 10px; border: 1px solid #fecdd3; }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-link">← 메인으로 돌아가기</a>
 
-    <h1>만든 사람 이야기 (About Me)</h1>
-    
-    <div class="intro-box">
-        <p><strong>"이 옷, 나한테는 왜 안 어울릴까?"</strong></p>
-        <p>안녕하세요! 'AI 체형 진단' 서비스를 만든 '뷰스타 쪼'입니다. 저는 오랫동안 패션 블로그를 운영하며 수많은 옷을 입어봤지만, 늘 풀리지 않는 고민이 있었어요. 바로 이 질문이었죠.</p>
+    <div class="container">
+        <h1>About MyBodyShape</h1>
+
+        <div class="section" id="mission">
+            <h2>Our Mission: 당신의 고유한 아름다움을 찾아서</h2>
+            <p class="highlight"><strong>"왜 어떤 옷은 나에게 어울리고, 어떤 옷은 어색할까?"</strong></p>
+            <p>이 질문에서 MyBodyShape 서비스는 시작되었습니다. 우리는 모든 사람이 자신만의 고유한 체형과 매력을 가지고 있다고 믿습니다. 유행을 맹목적으로 따르기보다, 자신의 몸을 이해하고 그에 맞는 스타일을 찾을 때 진정한 자신감이 발현됩니다.</p>
+            <p>저희의 미션은 누구나 쉽고, 재미있고, 무료로 자신의 체형을 진단하고 '인생 스타일'을 찾도록 돕는 것입니다. 더 이상 쇼핑에 실패하지 않고, 매일 아침 옷장 앞에서 행복한 고민을 하는 당신을 응원합니다.</p>
+        </div>
+
+        <div class="section" id="technology">
+            <h2>Our Technology: 어떻게 분석하나요?</h2>
+            <p>MyBodyShape는 최신 인공지능 기술을 활용하여 사용자의 체형을 분석합니다. 그 과정은 다음과 같습니다.</p>
+            <ol>
+                <li><strong>데이터 학습:</strong> 수천, 수만 장의 다양한 체형 데이터를 '스트레이트', '웨이브', '내추럴' 3가지 타입으로 분류하여 AI 모델을 학습시킵니다.</li>
+                <li><strong>이미지 특징 추출:</strong> 사용자가 사진을 업로드하면, AI는 서버 전송 없이 사용자의 브라우저 내에서 이미지의 특징(어깨 너비, 허리 위치, 골반 라인 등)을 실시간으로 분석합니다.</li>
+                <li><strong>타입 분류 및 결과 제공:</strong> 추출된 특징을 학습된 데이터와 비교하여 가장 유사도가 높은 체형 타입을 판정하고, 그에 맞는 상세한 스타일링 팁을 제공합니다.</li>
+            </ol>
+            <p>이 모든 과정은 사용자의 개인정보 보호를 최우선으로 고려하여, 사진이 외부로 전송되거나 저장되지 않는 안전한 방식으로 이루어집니다.</p>
+        </div>
+
+        <div class="section" id="team">
+            <h2>Our Team</h2>
+            <p>MyBodyShape는 패션과 기술에 열정을 가진 '뷰스타 쪼'에 의해 시작된 개인 프로젝트입니다. 오랜 패션 블로그 운영 경험과 스타일링 노하우를 바탕으로, 더 많은 사람들이 스타일링의 즐거움을 느끼게 하고자 본 서비스를 개발하게 되었습니다.</p>
+            <p>우리는 사용자의 목소리에 귀 기울이며, 지속적인 연구와 업데이트를 통해 더 정확하고 유용한 서비스를 제공하기 위해 노력할 것입니다.</p>
+        </div>
+
+        <div class="section" id="commitment">
+            <h2>Our Commitment to Privacy</h2>
+            <p>저희는 사용자의 신뢰를 가장 소중한 가치로 생각합니다. MyBodyShape는 사용자의 사진을 포함한 어떠한 개인 식별 정보도 서버에 저장하지 않을 것을 약속합니다. 모든 분석은 투명하고 안전하게 사용자의 기기 안에서만 이루어집니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 참고해주시기 바랍니다.</p>
+        </div>
     </div>
-
-    <p>분명 멋진 옷인데도 제가 입으면 어딘가 어색해 보일 때가 많았어요. 제 몸매에 문제가 있나 자책하기도 했죠. 그러다 '골격 진단'이라는 개념을 알게 되었고, 유레카를 외쳤습니다!</p>
-
-    <p>사람마다 타고난 골격, 즉 '바디 프레임'이 모두 다르다는 것. 그리고 그 프레임에 맞는 옷을 입었을 때 비로소 가장 멋져 보인다는 사실을요. 이 인사이트를 다른 사람들과도 나누고 싶었어요.</p>
-
-    <h3>제가 꿈꾸는 것</h3>
-    <p>저는 이 서비스가 여러분에게 이런 경험을 선물했으면 좋겠습니다.</p>
-    <ul>
-        <li>비싼 돈 들여 컨설팅 받지 않아도, 내 체형을 쉽고 재미있게 이해하는 경험.</li>
-        <li>'스트레이트 타입은 V넥!' 같은 단순한 공식을 넘어, 내 매력을 살리는 스타일링 원리를 깨닫는 경험.</li>
-        "        <li>더 이상 쇼핑에 실패하지 않고, 내 옷장을 '인생템'으로만 채워가는 즐거움.</li>
-"
-    </ul>
-
-    <p>이제 여러분도 자신만의 '인생 핏'을 찾아, 매일 더 빛나는 하루를 보내시길 진심으로 응원합니다!</p>
 </body>
 </html>
